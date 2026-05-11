@@ -19,9 +19,9 @@ async function getVenuesData(): Promise<VenuesData> {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Neighborhoods — LiveMusic DFW",
+    title: "Dallas Fort Worth Neighborhoods With Live Music",
     description:
-      "Browse live music by Dallas-Fort Worth neighborhood. Deep Ellum, Lower Greenville, Oak Cliff, Bishop Arts, Fort Worth, and more.",
+      "Find live music by DFW neighborhood — Deep Ellum, Lower Greenville, Oak Cliff, Bishop Arts, Fort Worth, and more. Browse live events by area.",
     alternates: {
       canonical: "https://livemusic.dailydallasnews.com/neighborhoods",
     },

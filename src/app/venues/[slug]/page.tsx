@@ -28,10 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!venue) return { title: "Venue Not Found" };
 
   return {
-    title: `${venue.name} — LiveMusic DFW`,
-    description: venue.description,
+    title: `${venue.name} — Live Music Venue in ${venue.neighborhood.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())} | LiveMusic DFW`,
+    description: venue.description || `Live music at ${venue.name} in ${venue.neighborhood.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())}, Dallas-Fort Worth. ${venue.musicTypes?.join(", ") || "Find upcoming shows and events."}`,
     alternates: {
       canonical: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+    },
+    openGraph: {
+      title: `${venue.name} — LiveMusic DFW`,
+      description: venue.description || `${venue.name} hosts live music in ${venue.neighborhood.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())}, DFW.`,
+      type: "website",
+      siteName: "LiveMusic DFW",
     },
   };
 }

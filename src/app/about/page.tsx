@@ -1,9 +1,9 @@
 import styles from "./about.module.css";
 
 export const metadata = {
-  title: "About — LiveMusic DFW",
+  title: "About LiveMusic DFW — Dallas Fort Worth Live Music Calendar",
   description:
-    "About LiveMusic DFW — your guide to live music events across Dallas-Fort Worth.",
+    "About LiveMusic DFW — your free guide to live music events across Dallas-Fort Worth. Part of the Daily Dallas News network.",
 };
 
 export default function AboutPage() {

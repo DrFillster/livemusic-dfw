@@ -25,11 +25,11 @@ async function getLocalEvents(): Promise<{ events: LocalEvent[]; neighborhoods: 
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "In Your Backyard — DFW Local Live Music",
+    title: "DFW Live Music Events — Dallas Fort Worth Concerts This Week",
     description:
-      "Discover live music playing at neighborhood bars and venues near you in Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
+      "Discover live music events happening this week at neighborhood bars and venues across Dallas-Fort Worth. Local bands, no cover charge, find shows near you.",
     openGraph: {
-      title: "In Your Backyard — DFW Local Live Music",
+      title: "In Your Backyard — DFW Live Music This Week",
       description:
         "Discover live music at neighborhood bars near you. The bands you haven't heard yet, playing at places you already love.",
       type: "website",

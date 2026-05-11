@@ -3,13 +3,16 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "In Your Backyard — DFW Local Live Music",
+  title: {
+    template: "%s | LiveMusic DFW",
+    default: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | livemusic.dailydallasnews.com",
+  },
   description:
-    "Discover live music playing at neighborhood bars and venues near you in Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
+    "Discover live music at neighborhood bars and venues across Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
   openGraph: {
-    title: "In Your Backyard — DFW Local Live Music",
+    title: "LiveMusic DFW — DFW Live Music Calendar",
     description:
-      "Discover live music at neighborhood bars near you. The bands you haven't heard yet, playing at places you already love.",
+      "Discover live music at neighborhood bars across Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
     type: "website",
     siteName: "LiveMusic DFW",
   },
@@ -42,17 +45,19 @@ export default function RootLayout({
               <Link href="/neighborhoods">Neighborhoods</Link>
               <Link href="/venues">Venues</Link>
               <Link href="/about">About</Link>
+              <Link href="https://dailydallasnews.com" target="_blank" rel="noopener" className="sister-site">
+                ← Daily Dallas News
+              </Link>
             </nav>
           </div>
         </header>
         <main>{children}</main>
         <footer>
           <p>
-            LiveMusic DFW — Part of the{" "}
+            <strong>Part of the DFW News family</strong> —{" "}
             <a href="https://dailydallasnews.com" target="_blank" rel="noopener">
               Daily Dallas News
-            </a>{" "}
-            network
+            </a>
           </p>
         </footer>
       </body>

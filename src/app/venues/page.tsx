@@ -18,8 +18,9 @@ async function getVenuesData(): Promise<VenuesData> {
 }
 
 export const metadata: Metadata = {
-  title: "Venues — LiveMusic DFW",
-  description: "Local DFW bars and venues with regular live music. Discover where your favorite local bands play.",
+  title: "DFW Music Venues — Dallas Fort Worth Concert Halls & Clubs",
+  description:
+    "Browse all DFW music venues hosting live performances — from intimate bars to concert halls. Find where your favorite local bands play in Dallas-Fort Worth.",
   alternates: {
     canonical: "https://livemusic.dailydallasnews.com/venues",
   },

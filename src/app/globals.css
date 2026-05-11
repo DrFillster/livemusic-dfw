@@ -427,6 +427,20 @@
   color: white;
 }
 
+.masthead nav a.sister-site {
+  color: #d97706;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #d97706;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.masthead nav a.sister-site:hover {
+  background: #d97706;
+  color: white;
+}
+
 /* Footer */
 footer {
   background: #f5f5f5;

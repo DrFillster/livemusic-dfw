@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://livemusic.dailydallasnews.com/sitemap.xml

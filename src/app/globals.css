@@ -1,0 +1,237 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 0.5rem;
+}
+
+.hero p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.content {
+  padding-bottom: 4rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.city-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.city-filter label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.city-filter select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+}
+
+.event-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  transition: box-shadow 0.2s;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 1rem;
+}
+
+.event-meta-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #d97706;
+}
+
+.event-city {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.event-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.event-card h3 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.event-card h3 a:hover {
+  color: #d97706;
+}
+
+.event-venue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.venue-name {
+  font-weight: 500;
+}
+
+.event-price {
+  font-weight: 700;
+  color: #059669;
+}
+
+.event-summary {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.ticket-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #d97706;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.ticket-btn:hover {
+  background: #b45309;
+}
+
+.no-events {
+  text-align: center;
+  color: #888;
+  padding: 3rem;
+}
+
+/* Masthead */
+.masthead {
+  background: #111;
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+
+.masthead-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+
+.logo-dfw {
+  color: #d97706;
+}
+
+.masthead nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.masthead nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.masthead nav a:hover {
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #d97706;
+}

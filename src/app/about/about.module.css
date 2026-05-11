@@ -1,0 +1,22 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.page p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.page a {
+  color: #d97706;
+}

@@ -19,7 +19,8 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
   const dayOfWeek = today.getDay(); // 0=Sun, 6=Sat
 
   const filtered = useMemo(() => {
-    let result = events;
+    const todayStr = today.toISOString().split("T")[0];
+    let result = events.filter((e) => e.published >= todayStr);
 
     if (activeNeighborhood !== "all") {
       result = result.filter((e) => e.neighborhood === activeNeighborhood);

@@ -188,6 +188,23 @@
       "hours": "Varies by event"
     },
     {
+      "id": "granada-theater",
+      "name": "Granada Theater",
+      "slug": "granada-theater",
+      "neighborhood": "lower-greenville",
+      "address": "3520 Greenville Ave, Dallas, TX 75206",
+      "phone": "(214) 824-9943",
+      "website": "https://granadatheater.com",
+      "instagram": "https://www.instagram.com/granadatheater",
+      "facebook": "https://www.facebook.com/granadatheater",
+      "type": "Live Music Venue / Theater",
+      "musicTypes": ["indie", "rock", "folk", "americana", "singer-songwriter", "local and touring acts"],
+      "eventsUrl": "https://granadatheater.com/events",
+      "description": "Dallas's best mid-size concert venue. A converted 1940s theater with stellar acoustics and a lineup that punches way above its weight — national acts in an intimate room where every seat is close.",
+      "cover": "$15-40",
+      "hours": "Box office 4pm-8pm show days, 12pm-8pm Fri-Sat"
+    },
+    {
       "id": "truck-yard",
       "name": "Truck Yard Dallas",
       "slug": "truck-yard",
@@ -255,6 +272,23 @@
       "description": "Fort Worth's underground music scene. Local and touring punk, metal, and rock acts in a small room.",
       "cover": "$5-10",
       "hours": "Varies by event"
+    },
+    {
+      "id": "kessler-theater",
+      "name": "Kessler Theater",
+      "slug": "kessler-theater",
+      "neighborhood": "bishop-arts",
+      "address": "1234 W Davis St, Dallas, TX 75208",
+      "phone": "(214) 948-0716",
+      "website": "https://www.thekessler.org",
+      "instagram": "https://www.instagram.com/kesslertheater",
+      "facebook": "https://www.facebook.com/KesslerTheater",
+      "type": "Live Music Venue",
+      "musicTypes": ["indie", "rock", "folk", "americana", "world music", "local and touring acts"],
+      "eventsUrl": "https://www.thekessler.org/events",
+      "description": "Oak Cliff's premier intimate concert venue. A restored 1940s movie house hosting local and national acts in a room where you can see the performer's eyes. The beating heart of the Bishop Arts music scene.",
+      "cover": "$15-35",
+      "hours": "Box office opens 1 hour before showtime"
     },
     {
       "id": "acrossthe-way",

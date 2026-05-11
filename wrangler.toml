@@ -1,0 +1,6 @@
+name = "livemusic-dfw"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = ".next"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://livemusic.dailydallasnews.com"

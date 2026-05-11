@@ -1,0 +1,145 @@
+/* Venue detail page styles */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: #d97706;
+  text-decoration: none;
+}
+
+.venueHeader h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.venueMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.venueTypeBadge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.venueAddress, .venuePhone {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.venueDescription {
+  color: #444;
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+.venueHours {
+  font-size: 0.85rem;
+  color: #666;
+  background: #fafafa;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.venueSchedule {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.venueSchedule h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.scheduleItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.scheduleDay {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.scheduleMusic {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #111;
+  margin-top: 0.2rem;
+}
+
+.venueTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.75rem;
+}
+
+.venueTag {
+  font-size: 0.72rem;
+  background: #eee;
+  color: #555;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.venueLinks {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.venueLinkBtn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #111;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.venueLinkBtn:hover {
+  background: #333;
+}

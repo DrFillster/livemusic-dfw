@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { readFile } from "fs/promises";
+import { join } from "path";
+import type { VenuesData } from "@/lib/events-data";
+import styles from "./page.module.css";
+
+export const dynamic = "force-dynamic";
+
+async function getVenuesData(): Promise<VenuesData> {
+  try {
+    const filePath = join(process.cwd(), "public", "venues.json");
+    const content = await readFile(filePath, "utf8");
+    return JSON.parse(content);
+  } catch {
+    return { generated: "", neighborhoods: [], venues: [] };
+  }
+}
+
+export const metadata: Metadata = {
+  title: "Venues — LiveMusic DFW",
+  description: "Local DFW bars and venues with regular live music. Discover where your favorite local bands play.",
+  alternates: {
+    canonical: "https://livemusic.dailydallasnews.com/venues",
+  },
+};
+
+export default async function VenuesPage() {
+  const data = await getVenuesData();
+
+  return (
+    <div className={styles.page}>
+      <section className={styles.hero}>
+        <h1>Local Venues</h1>
+        <p>The bars and spots in DFW where you can catch live music any night of the week.</p>
+      </section>
+
+      <div className={styles.venuesGrid}>
+        {data.venues.map((venue) => (
+          <Link key={venue.id} href={`/venues/${venue.slug}`} className={styles.venueCard}>
+            <span className={styles.venueType}>{venue.type}</span>
+            <div className={styles.venueNeighborhood}>
+              {venue.neighborhood.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())}
+            </div>
+            <h3>{venue.name}</h3>
+            <p className={styles.venueDescription}>{venue.description}</p>
+            <div className={styles.venueMeta}>
+              {venue.hours && <span>🕐 {venue.hours.split(",")[0]}</span>}
+              {venue.cover && <span>Cover: {venue.cover}</span>}
+            </div>
+            {venue.musicTypes && venue.musicTypes.length > 0 && (
+              <div className={styles.venueTags}>
+                {venue.musicTypes.slice(0, 3).map((mt) => (
+                  <span key={mt} className={styles.venueTag}>{mt}</span>
+                ))}
+              </div>
+            )}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}

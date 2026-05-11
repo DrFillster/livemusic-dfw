@@ -1,0 +1,72 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 0.5rem;
+}
+
+.hero p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.neighborhoodCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.neighborhoodCard:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: #d97706;
+}
+
+.neighborhoodDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+
+.neighborhoodCard h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.3rem;
+}
+
+.neighborhoodCard p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}

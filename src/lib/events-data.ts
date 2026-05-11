@@ -19,6 +19,30 @@ export interface LiveEvent {
   score: number;
 }
 
+// Extended event type for local venue shows
+export interface LocalEvent {
+  id: string;
+  title: string;
+  url: string;
+  summary: string;
+  published: string;
+  time: string;
+  venue: string;
+  venueSlug: string;
+  neighborhood: string;
+  neighborhoodName: string;
+  address: string;
+  price: string;
+  free: boolean;
+  cover: string;
+  image: string;
+  ticketUrl: string;
+  source: string;
+  sourceLogo: string;
+  genres: string[];
+  description: string;
+}
+
 export interface EventsData {
   ok: boolean;
   generated: string;
@@ -26,9 +50,40 @@ export interface EventsData {
   events: LiveEvent[];
 }
 
+export interface Venue {
+  id: string;
+  name: string;
+  slug: string;
+  neighborhood: string;
+  address: string;
+  phone: string;
+  website: string;
+  facebook: string;
+  instagram: string;
+  type: string;
+  musicTypes: string[];
+  eventsUrl: string;
+  schedule: Record<string, string>;
+  description: string;
+  cover: string;
+  hours: string;
+}
+
+export interface Neighborhood {
+  id: string;
+  name: string;
+  description: string;
+  color: string;
+}
+
+export interface VenuesData {
+  generated: string;
+  neighborhoods: Neighborhood[];
+  venues: Venue[];
+}
+
 export function formatDate(dateStr: string): string {
   if (!dateStr) return "";
-  // Remove time component if present
   const d = dateStr.split("T")[0];
   const [year, month, day] = d.split("-");
   const months = [

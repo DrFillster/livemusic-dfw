@@ -37,8 +37,8 @@ export default function RootLayout({
       <body>
         <header className="masthead">
           <div className="masthead-inner">
-            <Link href="/in-your-backyard" className="logo">
-              🎵 LiveMusic<span className="logo-dfw">DFW</span>
+            <Link href="/in-your-backyard" className="logo" aria-label="LiveMusic DFW Home">
+              <img src="/livemusic-logo.svg" alt="LiveMusic DFW" height="42" />
             </Link>
             <nav>
               <Link href="/in-your-backyard" className="active">In Your Backyard</Link>

@@ -19,7 +19,21 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
+  keywords: "Dallas live music, Fort Worth concerts, Deep Ellum live music, Lower Greenville bars, Oak Cliff live music, free music DFW",
+};
+
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "LiveMusic DFW",
+  url: "https://livemusic.dailydallasnews.com",
+  description: "Free guide to live music at neighborhood bars and venues across Dallas-Fort Worth.",
+  sameAs: [],
 };
 
 export default function RootLayout({
@@ -33,6 +47,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+        />
       </head>
       <body>
         <header className="masthead">

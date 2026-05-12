@@ -7,13 +7,13 @@ import styles from "./page.module.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "DFW Live Music Events — Dallas Fort Worth Concerts This Week",
+    title: "Dallas Fort Worth Live Music This Week — Free Shows in Deep Ellum, Lower Greenville, Oak Cliff | LiveMusic DFW",
     description:
-      "Discover live music events happening this week at neighborhood bars and venues across Dallas-Fort Worth. Local bands, no cover charge, find shows near you.",
+      "Find live music this week at DFW bars and venues — Deep Ellum, Lower Greenville, Oak Cliff, Fort Worth, and more. Free shows, local bands, no arena fees.",
     openGraph: {
-      title: "In Your Backyard — DFW Live Music This Week",
+      title: "LiveMusic DFW — Dallas Fort Worth Live Music This Week",
       description:
-        "Discover live music at neighborhood bars near you. The bands you haven't heard yet, playing at places you already love.",
+        "The bands you haven't heard yet, playing at places you already love. No arena. No ticket fees. Live music in your DFW neighborhood.",
       type: "website",
       siteName: "LiveMusic DFW",
     },
@@ -24,16 +24,63 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    keywords: "Dallas live music, Fort Worth concerts, Deep Ellum bands, free live music DFW, local music scene",
   };
+}
+
+function buildEventSchemas(events: LocalEvent[]) {
+  const now = new Date();
+  const upcoming = events
+    .filter((e) => new Date(e.published) >= now)
+    .slice(0, 20);
+
+  return upcoming.map((event) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.title,
+    startDate: event.published,
+    location: {
+      "@type": "Place",
+      name: event.venue,
+      url: event.venueSlug
+        ? `https://livemusic.dailydallasnews.com/venues/${event.venueSlug}`
+        : undefined,
+    },
+    description: event.summary || undefined,
+    image: event.image || undefined,
+    offers: event.ticketUrl
+      ? {
+          "@type": "Offer",
+          url: event.ticketUrl,
+          price: event.price || "0",
+          priceCurrency: "USD",
+          availability: event.free
+            ? "https://schema.org/InStock"
+            : "https://schema.org/InStock",
+        }
+      : undefined,
+    organizer: {
+      "@type": "Organization",
+      name: "LiveMusic DFW",
+      url: "https://livemusic.dailydallasnews.com",
+    },
+  }));
 }
 
 export default async function InYourBackyardPage() {
   const events: LocalEvent[] = localEventsData.events || [];
   const neighborhoods: VenuesData["neighborhoods"] = venuesData.neighborhoods;
+  const eventSchemas = buildEventSchemas(events);
 
   return (
-    <div className={styles.page}>
-      <InYourBackyardClient events={events} neighborhoods={neighborhoods} />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchemas) }}
+      />
+      <div className={styles.page}>
+        <InYourBackyardClient events={events} neighborhoods={neighborhoods} />
+      </div>
+    </>
   );
 }

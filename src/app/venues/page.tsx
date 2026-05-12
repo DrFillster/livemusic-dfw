@@ -5,12 +5,13 @@ import venuesData from "@/app/data/venues.json";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "DFW Music Venues — Dallas Fort Worth Concert Halls & Clubs",
+  title: "DFW Music Venues — Dallas Fort Worth Bars, Clubs & Concert Halls With Live Music",
   description:
-    "Browse all DFW music venues hosting live performances — from intimate bars to concert halls. Find where your favorite local bands play in Dallas-Fort Worth.",
+    "Browse every DFW venue hosting live music — Deep Ellum dive bars, Lower Greenville clubs, Oak Cliff intimate rooms, Fort Worth honky-tonks. Find where local bands play.",
   alternates: {
     canonical: "https://livemusic.dailydallasnews.com/venues",
   },
+  keywords: "DFW music venues, Dallas bars live music, Fort Worth honky tonk, Deep Ellum clubs, live music venues Dallas",
 };
 
 export default async function VenuesPage() {

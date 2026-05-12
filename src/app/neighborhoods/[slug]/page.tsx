@@ -96,9 +96,9 @@ export default async function NeighborhoodPage({ params }: Props) {
                   })}
                 </div>
                 <h3>
-                  <a href={event.url || event.ticketUrl || "#"} target="_blank" rel="noopener noreferrer">
+                  <Link href={`/events/${encodeURIComponent(event.id)}`}>
                     {event.title}
-                  </a>
+                  </Link>
                 </h3>
                 <div className={styles.eventMeta}>
                   <span>{event.time}</span>

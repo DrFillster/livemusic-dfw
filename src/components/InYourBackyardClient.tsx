@@ -14,6 +14,7 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
   const [activeNeighborhood, setActiveNeighborhood] = useState<string>("all");
   const [showWeekendOnly, setShowWeekendOnly] = useState(false);
   const [activeDay, setActiveDay] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const today = new Date();
   const dayOfWeek = today.getDay(); // 0=Sun, 6=Sat
@@ -21,6 +22,17 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
   const filtered = useMemo(() => {
     const todayStr = today.toISOString().split("T")[0];
     let result = events.filter((e) => e.published >= todayStr);
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (e) =>
+          e.title.toLowerCase().includes(q) ||
+          e.venue.toLowerCase().includes(q) ||
+          (e.summary && e.summary.toLowerCase().includes(q)) ||
+          e.neighborhood.toLowerCase().includes(q)
+      );
+    }
 
     if (activeNeighborhood !== "all") {
       result = result.filter((e) => e.neighborhood === activeNeighborhood);
@@ -53,7 +65,7 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
     }
 
     return result;
-  }, [events, activeNeighborhood, showWeekendOnly, activeDay]);
+  }, [events, activeNeighborhood, showWeekendOnly, activeDay, searchQuery, today]);
 
   // Group by date for "Tonight/Tomorrow" view
   const upcomingDates = useMemo(() => {
@@ -96,6 +108,27 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
           The bands you haven&apos;t heard yet, playing at bars you already love.
           No arena. No ticket fees. Just live music, steps from your door.
         </p>
+
+        {/* Search */}
+        <div className="search-wrapper">
+          <input
+            type="search"
+            placeholder="Search bands, venues, or neighborhoods..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+            aria-label="Search events"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="search-clear"
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
 
         {/* Quick filters */}
         <div className="quick-filters">
@@ -239,14 +272,12 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
                         <span className="event-price">{event.price}</span>
                       )}
                       {event.free && <span className="free-badge">Free</span>}
-                      <a
-                        href={event.ticketUrl || event.url}
+                      <Link
+                        href={`/events/${encodeURIComponent(event.id)}`}
                         className="ticket-btn"
-                        target="_blank"
-                        rel="noopener noreferrer"
                       >
                         Details →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </article>

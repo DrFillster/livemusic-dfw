@@ -1,34 +1,10 @@
 import type { MetadataRoute } from "next";
-import { readFile } from "fs/promises";
-import { join } from "path";
+import localEventsData from "@/app/data/local-events.json";
+import venuesData from "@/app/data/venues.json";
 
 const BASE_URL = "https://livemusic.dailydallasnews.com";
 
-interface Venue {
-  slug: string;
-}
-
-interface Neighborhood {
-  id: string;
-}
-
-interface VenuesData {
-  neighborhoods: Neighborhood[];
-  venues: Venue[];
-}
-
-async function getVenuesData(): Promise<VenuesData> {
-  try {
-    const filePath = join(process.cwd(), "public", "venues.json");
-    const content = await readFile(filePath, "utf8");
-    return JSON.parse(content);
-  } catch {
-    return { neighborhoods: [], venues: [] };
-  }
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const data = await getVenuesData();
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -64,19 +40,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const venuePages: MetadataRoute.Sitemap = data.venues.map((venue) => ({
+  const venuePages: MetadataRoute.Sitemap = venuesData.venues.map((venue) => ({
     url: `${BASE_URL}/venues/${venue.slug}`,
     lastModified: now,
-    changeFrequency: "weekly" as const,
+    changeFrequency: "weekly",
     priority: 0.6,
   }));
 
-  const neighborhoodPages: MetadataRoute.Sitemap = data.neighborhoods.map((n) => ({
+  const neighborhoodPages: MetadataRoute.Sitemap = venuesData.neighborhoods.map((n) => ({
     url: `${BASE_URL}/neighborhoods/${n.id}`,
     lastModified: now,
-    changeFrequency: "weekly" as const,
+    changeFrequency: "weekly",
     priority: 0.5,
   }));
 
-  return [...staticPages, ...venuePages, ...neighborhoodPages];
+  const eventPages: MetadataRoute.Sitemap = localEventsData.events
+    .filter((e) => new Date(e.published) >= now)
+    .map((event) => ({
+      url: `${BASE_URL}/events/${encodeURIComponent(event.id)}`,
+      lastModified: new Date(event.published),
+      changeFrequency: "daily",
+      priority: 0.7,
+    }));
+
+  return [...staticPages, ...venuePages, ...neighborhoodPages, ...eventPages];
 }

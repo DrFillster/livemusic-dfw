@@ -1,30 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { readFile } from "fs/promises";
-import { join } from "path";
-import type { Venue } from "@/lib/events-data";
+import type { Venue, VenuesData } from "@/lib/events-data";
+import venuesData from "@/app/data/venues.json";
 import styles from "./page.module.css";
-
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-async function getVenue(slug: string): Promise<Venue | null> {
-  try {
-    const filePath = join(process.cwd(), "public", "venues.json");
-    const content = await readFile(filePath, "utf8");
-    const data = JSON.parse(content);
-    return data.venues.find((v: Venue) => v.slug === slug) || null;
-  } catch {
-    return null;
-  }
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const venue = await getVenue(slug);
+  const data = venuesData;
+  const venue = data.venues.find((v) => v.slug === slug);
   if (!venue) return { title: "Venue Not Found" };
 
   return {
@@ -44,7 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function VenuePage({ params }: Props) {
   const { slug } = await params;
-  const venue = await getVenue(slug);
+  const data = venuesData;
+  const venue = data.venues.find((v) => v.slug === slug) as Venue | undefined;
 
   if (!venue) {
     return (

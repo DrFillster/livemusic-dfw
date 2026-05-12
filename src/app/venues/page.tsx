@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import type { VenuesData } from "@/lib/events-data";
+import venuesData from "@/app/data/venues.json";
 import styles from "./page.module.css";
-
-export const dynamic = "force-dynamic";
-
-async function getVenuesData(): Promise<VenuesData> {
-  try {
-    const filePath = join(process.cwd(), "public", "venues.json");
-    const content = await readFile(filePath, "utf8");
-    return JSON.parse(content);
-  } catch {
-    return { generated: "", neighborhoods: [], venues: [] };
-  }
-}
 
 export const metadata: Metadata = {
   title: "DFW Music Venues — Dallas Fort Worth Concert Halls & Clubs",
@@ -27,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function VenuesPage() {
-  const data = await getVenuesData();
+  const data = venuesData;
 
   return (
     <div className={styles.page}>

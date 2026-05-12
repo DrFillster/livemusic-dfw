@@ -1,27 +1,9 @@
 import type { Metadata } from "next";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import type { LocalEvent, VenuesData } from "@/lib/events-data";
 import InYourBackyardClient from "@/components/InYourBackyardClient";
+import localEventsData from "@/app/data/local-events.json";
+import venuesData from "@/app/data/venues.json";
 import styles from "./page.module.css";
-
-export const dynamic = "force-dynamic";
-
-async function getLocalEvents(): Promise<{ events: LocalEvent[]; neighborhoods: VenuesData["neighborhoods"] }> {
-  try {
-    // Try local-events.json first (venue-sourced events)
-    const localPath = join(process.cwd(), "public", "local-events.json");
-    const localContent = await readFile(localPath, "utf8").catch(() => null);
-    if (localContent) {
-      const data = JSON.parse(localContent);
-      const venuesPath = join(process.cwd(), "public", "venues.json");
-      const venuesContent = await readFile(venuesPath, "utf8").catch(() => null);
-      const venuesData: VenuesData = venuesContent ? JSON.parse(venuesContent) : { neighborhoods: [], venues: [] };
-      return { events: data.events || [], neighborhoods: venuesData.neighborhoods };
-    }
-  } catch {}
-  return { events: [], neighborhoods: [] };
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -46,7 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function InYourBackyardPage() {
-  const { events, neighborhoods } = await getLocalEvents();
+  const events: LocalEvent[] = localEventsData.events || [];
+  const neighborhoods: VenuesData["neighborhoods"] = venuesData.neighborhoods;
 
   return (
     <div className={styles.page}>

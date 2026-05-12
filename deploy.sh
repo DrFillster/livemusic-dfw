@@ -5,7 +5,13 @@ cd "$(dirname "$0")"
 echo "Building LiveMusic DFW..."
 npm run build
 
-echo "Deploying to Cloudflare Pages..."
-npx wrangler pages deploy .next --project-name=livemusic-dfw --commit-message="$(git log -1 --pretty=%B 2>/dev/null || echo 'manual deploy')"
+echo "Generating OpenNext bundle..."
+npx opennextjs-cloudflare build
 
-echo "✓ Done! https://livemusic-dfw.pages.dev"
+echo "Copying data files to server bundle..."
+cp src/app/data/local-events.json .open-next/server-functions/default/public/
+
+echo "Deploying to Cloudflare Workers..."
+npx wrangler deploy --project-name=livemusic-dfw
+
+echo "✓ Done! https://livemusic-dfw.philipbernard.workers.dev"

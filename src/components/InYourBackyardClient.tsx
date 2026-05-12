@@ -253,13 +253,9 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
                       <span className="event-neighborhood">{event.neighborhoodName}</span>
                     </div>
                     <h3>
-                      <a
-                        href={event.ticketUrl || event.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link href={`/events/${encodeURIComponent(event.id)}`}>
                         {event.title}
-                      </a>
+                      </Link>
                     </h3>
                     {event.summary && (
                       <p className="event-summary">

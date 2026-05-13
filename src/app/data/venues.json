@@ -291,7 +291,7 @@
       "hours": "Box office opens 1 hour before showtime"
     },
     {
-      "id": "acrossthe-way",
+      "id": "across-the-way",
       "name": "Across the Way",
       "slug": "across-the-way",
       "neighborhood": "oak-cliff",
@@ -300,6 +300,23 @@
       "musicTypes": ["rock", "blues", "local bands"],
       "description": "Oak Cliff's go-to for live music near the Bishop Arts strip. Outdoor patio and a solid jukebox too.",
       "cover": "$5",
+      "hours": "4pm - 2am daily"
+    },
+    {
+      "id": "adairs-saloon",
+      "name": "Adair's Saloon",
+      "slug": "adairs-saloon",
+      "neighborhood": "deep-ellum",
+      "address": "2624 Commerce St, Dallas, TX 75226",
+      "phone": "(214) 939-9900",
+      "website": "https://adairssaloon.com",
+      "facebook": "https://www.facebook.com/adairsaloon",
+      "instagram": "https://www.instagram.com/adairsaloon",
+      "type": "Honky Tonk",
+      "musicTypes": ["country", "live music"],
+      "eventsUrl": "https://www.facebook.com/adairsaloon/events",
+      "description": "Dallas's enduring honky-tonk since 1963. No frills, no cover, just cold drinks and live country music every weekend in the heart of Deep Ellum.",
+      "cover": "Free",
       "hours": "4pm - 2am daily"
     }
   ]

@@ -47,7 +47,7 @@ export interface EventsData {
   ok: boolean;
   generated: string;
   total: number;
-  events: LiveEvent[];
+  events: (LiveEvent | LocalEvent)[];
 }
 
 export interface Venue {

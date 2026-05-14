@@ -24,18 +24,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!event) return { title: "Event Not Found" };
 
-  const venue = venuesData.venues.find((v) => v.slug === event.venueSlug);
+  // Handle both LiveEvent (DDN pipeline) and LocalEvent (LMDW native) schemas
+  const isLocalEvent = "venueSlug" in event;
+  const venueSlug = isLocalEvent ? (event as unknown as LocalEvent).venueSlug : undefined;
+  const neighborhoodId = isLocalEvent ? (event as unknown as LocalEvent).neighborhood : undefined;
+  const venueSlug_2 = isLocalEvent ? (event as unknown as LocalEvent).venueSlug : undefined;
+  const venue = venueSlug_2
+    ? venuesData.venues.find((v) => v.slug === venueSlug_2)
+    : undefined;
 
   return {
     title: `${event.title} — ${event.venue} | LiveMusic DFW`,
     description:
       event.summary ||
-      `${event.title} at ${event.venue} in ${event.neighborhoodName}. ${event.free ? "Free admission." : event.price ? `Tickets from ${event.price}.` : ""} ${event.genres?.join(", ") || ""}`,
+      `${event.title} at ${event.venue}${isLocalEvent && neighborhoodId ? " in " + neighborhoodId : ""}. ${isLocalEvent && (event as unknown as LocalEvent).free ? "Free admission." : event.price ? `Tickets from ${event.price}.` : ""}`,
     openGraph: {
       title: `${event.title} — ${event.venue}`,
       description:
         event.summary ||
-        `${event.title} at ${event.venue} in ${event.neighborhoodName}.`,
+        `${event.title} at ${event.venue}${isLocalEvent && neighborhoodId ? " in " + neighborhoodId : ""}.`,
       type: "website",
       siteName: "LiveMusic DFW",
       images: event.image ? [{ url: event.image }] : [],
@@ -86,28 +93,43 @@ export default async function EventPage({ params }: Props) {
   const { id } = await params;
   const decodedId = decodeURIComponent(id);
   const event = localEventsData.events.find((e) => e.id === decodedId) as
-    | LocalEvent
+    | (LocalEvent & Record<string, unknown>)
     | undefined;
 
   if (!event) {
     notFound();
   }
 
-  const venue = venuesData.venues.find((v) => v.slug === event.venueSlug);
-  const neighborhood = venuesData.neighborhoods.find(
-    (n) => n.id === event.neighborhood
-  );
-  const eventSchema = buildEventSchema(event, event.venueSlug);
+  // Safe property accessors that work with both LiveEvent and LocalEvent schemas
+  const _event = event as Record<string, unknown>;
+  const _venueSlug = String(_event.venueSlug ?? "");
+  const _neighborhood = String(_event.neighborhood ?? "");
+  const _time = String(_event.time ?? "");
+  const _genres = Array.isArray(_event.genres) ? _event.genres : [];
+  const _description = String(_event.description ?? "");
+  const _free = Boolean(_event.free ?? false);
+  const _address = String(_event.address ?? "");
 
-  // Find related events at same venue
-  const relatedEvents = localEventsData.events
-    .filter(
-      (e) =>
-        e.venueSlug === event.venueSlug &&
-        e.id !== event.id &&
-        new Date(e.published) >= new Date()
-    )
-    .slice(0, 5);
+  const venue = _venueSlug
+    ? venuesData.venues.find((v) => v.slug === _venueSlug)
+    : undefined;
+  const neighborhood = _neighborhood
+    ? venuesData.neighborhoods.find((n) => n.id === _neighborhood)
+    : undefined;
+  const eventSchema = buildEventSchema(event, _venueSlug || undefined);
+
+  // Find related events at same venue (only for LocalEvents with venueSlug)
+  const allEvents = localEventsData.events as Record<string, unknown>[];
+  const relatedEvents = _venueSlug
+    ? allEvents
+        .filter(
+          (e) =>
+            String(e.venueSlug ?? "") === _venueSlug &&
+            String(e.id ?? "") !== event.id &&
+            new Date(String(e.published ?? "")) >= new Date()
+        )
+        .slice(0, 5) as typeof localEventsData.events
+    : [];
 
   return (
     <>
@@ -148,10 +170,10 @@ export default async function EventPage({ params }: Props) {
               <span className={styles.eventDate}>
                 {formatDate(event.published)}
               </span>
-              {event.time && (
+              {_time && (
                 <>
                   <span className={styles.metaDot}>·</span>
-                  <span className={styles.eventTime}>{event.time}</span>
+                  <span className={styles.eventTime}>{_time}</span>
                 </>
               )}
             </div>
@@ -176,16 +198,16 @@ export default async function EventPage({ params }: Props) {
             ) : (
               <span className={styles.venueName}>{event.venue}</span>
             )}
-            {event.address && (
-              <span className={styles.venueAddress}>{event.address}</span>
+            {_address && (
+              <span className={styles.venueAddress}>{_address}</span>
             )}
           </div>
 
-          {event.genres && event.genres.length > 0 && (
+          {_genres.length > 0 && (
             <div className={styles.genres}>
-              {event.genres.map((g) => (
-                <span key={g} className={styles.genreTag}>
-                  {g}
+              {_genres.map((g) => (
+                <span key={String(g)} className={styles.genreTag}>
+                  {String(g)}
                 </span>
               ))}
             </div>
@@ -194,10 +216,10 @@ export default async function EventPage({ params }: Props) {
 
         {/* Event body */}
         <div className={styles.eventBody}>
-          {(event.description || event.summary) && (
+          {(_description || event.summary) && (
             <section className={styles.eventSection}>
               <h2>About</h2>
-              <p>{event.description || event.summary}</p>
+              <p>{_description || event.summary}</p>
             </section>
           )}
 
@@ -255,20 +277,20 @@ export default async function EventPage({ params }: Props) {
                 <span className={styles.detailLabel}>When</span>
                 <span className={styles.detailValue}>
                   {formatDate(event.published)}
-                  {event.time ? ` at ${event.time}` : ""}
+                  {_time ? ` at ${_time}` : ""}
                 </span>
               </div>
               <div className={styles.detailItem}>
                 <span className={styles.detailLabel}>Where</span>
                 <span className={styles.detailValue}>
                   {event.venue}
-                  {event.address ? ` — ${event.address}` : ""}
+                  {_address ? ` — ${_address}` : ""}
                 </span>
               </div>
               <div className={styles.detailItem}>
                 <span className={styles.detailLabel}>Admission</span>
                 <span className={styles.detailValue}>
-                  {event.free ? (
+                  {_free ? (
                     <span className={styles.freeTag}>Free</span>
                   ) : event.price ? (
                     event.price
@@ -302,21 +324,25 @@ export default async function EventPage({ params }: Props) {
             <section className={styles.eventSection}>
               <h2>More at {event.venue}</h2>
               <div className={styles.relatedList}>
-                {relatedEvents.map((e) => (
-                  <Link
-                    key={e.id}
-                    href={`/events/${encodeURIComponent(e.id)}`}
-                    className={styles.relatedItem}
-                  >
-                    <span className={styles.relatedDate}>
-                      {formatDate(e.published)}
-                    </span>
-                    <span className={styles.relatedTitle}>{e.title}</span>
-                    {e.time && (
-                      <span className={styles.relatedTime}>{e.time}</span>
-                    )}
-                  </Link>
-                ))}
+                {relatedEvents.map((e) => {
+                  const eSlug = String((e as Record<string, unknown>).venueSlug ?? "");
+                  const eTime = String((e as Record<string, unknown>).time ?? "");
+                  return (
+                    <Link
+                      key={e.id}
+                      href={`/events/${encodeURIComponent(e.id)}`}
+                      className={styles.relatedItem}
+                    >
+                      <span className={styles.relatedDate}>
+                        {formatDate(e.published)}
+                      </span>
+                      <span className={styles.relatedTitle}>{e.title}</span>
+                      {eTime && (
+                        <span className={styles.relatedTime}>{eTime}</span>
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </section>
           )}

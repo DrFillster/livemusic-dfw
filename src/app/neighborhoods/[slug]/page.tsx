@@ -40,19 +40,22 @@ export default async function NeighborhoodPage({ params }: Props) {
   const { slug } = await params;
 
   const neighborhood = venuesData.neighborhoods.find((n) => n.id === slug) as Neighborhood | undefined;
-  const neighborhoodEvents = (eventsData.events as Array<{
-    id: string;
-    title: string;
-    url?: string;
-    ticketUrl?: string;
-    published: string;
-    time: string;
-    venue: string;
-    venueSlug: string;
-    neighborhood: string;
-    free: boolean;
-    price: string;
-  }>).filter((e) => e.neighborhood === slug);
+  const allEvents = eventsData.events as Record<string, unknown>[];
+  const neighborhoodEvents = allEvents
+    .filter((e) => String(e.neighborhood ?? "") === slug)
+    .map((e) => ({
+      id: String(e.id ?? ""),
+      title: String(e.title ?? ""),
+      url: e.url ? String(e.url) : undefined,
+      ticketUrl: e.ticketUrl ? String(e.ticketUrl) : undefined,
+      published: String(e.published ?? ""),
+      time: String(e.time ?? ""),
+      venue: String(e.venue ?? ""),
+      venueSlug: String(e.venueSlug ?? ""),
+      neighborhood: String(e.neighborhood ?? ""),
+      free: Boolean(e.free ?? false),
+      price: String(e.price ?? ""),
+    } as { id: string; title: string; url?: string; ticketUrl?: string; published: string; time: string; venue: string; venueSlug: string; neighborhood: string; free: boolean; price: string }));
 
   const neighborhoodVenues = venuesData.venues.filter((v) => v.neighborhood === slug);
 

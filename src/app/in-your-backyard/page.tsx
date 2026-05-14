@@ -28,47 +28,48 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-function buildEventSchemas(events: LocalEvent[]) {
+function buildEventSchemas(events: (LocalEvent | Record<string, unknown>)[]) {
   const now = new Date();
   const upcoming = events
-    .filter((e) => new Date(e.published) >= now)
+    .filter((e) => new Date(String(e.published ?? "")) >= now)
     .slice(0, 20);
 
-  return upcoming.map((event) => ({
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.title,
-    startDate: event.published,
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      url: event.venueSlug
-        ? `https://livemusic.dailydallasnews.com/venues/${event.venueSlug}`
+  return upcoming.map((event) => {
+    const e = event as Record<string, unknown>;
+    return {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: String(e.title ?? ""),
+      startDate: String(e.published ?? ""),
+      location: {
+        "@type": "Place",
+        name: String(e.venue ?? ""),
+        url: e.venueSlug
+          ? `https://livemusic.dailydallasnews.com/venues/${String(e.venueSlug)}`
+          : undefined,
+      },
+      description: e.summary ? String(e.summary) : undefined,
+      image: e.image ? String(e.image) : undefined,
+      offers: e.ticketUrl
+        ? {
+            "@type": "Offer",
+            url: String(e.ticketUrl),
+            price: e.price ? String(e.price) : "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          }
         : undefined,
-    },
-    description: event.summary || undefined,
-    image: event.image || undefined,
-    offers: event.ticketUrl
-      ? {
-          "@type": "Offer",
-          url: event.ticketUrl,
-          price: event.price || "0",
-          priceCurrency: "USD",
-          availability: event.free
-            ? "https://schema.org/InStock"
-            : "https://schema.org/InStock",
-        }
-      : undefined,
-    organizer: {
-      "@type": "Organization",
-      name: "LiveMusic DFW",
-      url: "https://livemusic.dailydallasnews.com",
-    },
-  }));
+      organizer: {
+        "@type": "Organization",
+        name: "LiveMusic DFW",
+        url: "https://livemusic.dailydallasnews.com",
+      },
+    };
+  });
 }
 
 export default async function InYourBackyardPage() {
-  const events: LocalEvent[] = localEventsData.events || [];
+  const events = localEventsData.events || [];
   const neighborhoods: VenuesData["neighborhoods"] = venuesData.neighborhoods;
   const eventSchemas = buildEventSchemas(events);
 

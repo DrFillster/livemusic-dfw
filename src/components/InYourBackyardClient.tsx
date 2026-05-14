@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/events-data";
 import Link from "next/link";
 
 interface Props {
-  events: LocalEvent[];
+  events: (LocalEvent | Record<string, unknown>)[];
   neighborhoods: { id: string; name: string; description: string; color: string }[];
 }
 
@@ -21,62 +21,62 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
 
   const filtered = useMemo(() => {
     const todayStr = today.toISOString().split("T")[0];
-    let result = events.filter((e) => e.published >= todayStr);
+    let result = (events as Record<string, unknown>[]).filter((e) => String(e.published ?? "") >= todayStr);
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter(
         (e) =>
-          e.title.toLowerCase().includes(q) ||
-          e.venue.toLowerCase().includes(q) ||
-          (e.summary && e.summary.toLowerCase().includes(q)) ||
-          e.neighborhood.toLowerCase().includes(q)
+          String(e.title ?? "").toLowerCase().includes(q) ||
+          String(e.venue ?? "").toLowerCase().includes(q) ||
+          String(e.summary ?? "").toLowerCase().includes(q) ||
+          String(e.neighborhood ?? "").toLowerCase().includes(q)
       );
     }
 
     if (activeNeighborhood !== "all") {
-      result = result.filter((e) => e.neighborhood === activeNeighborhood);
+      result = result.filter((e) => String(e.neighborhood ?? "") === activeNeighborhood);
     }
 
     if (showWeekendOnly) {
       result = result.filter((e) => {
-        const d = new Date(e.published);
+        const d = new Date(String(e.published ?? ""));
         return d.getDay() === 0 || d.getDay() === 6;
       });
     }
 
     if (activeDay === "today") {
       result = result.filter((e) => {
-        const d = new Date(e.published.split("T")[0]);
+        const d = new Date(String(e.published ?? "").split("T")[0]);
         return d.toDateString() === today.toDateString();
       });
     } else if (activeDay === "tomorrow") {
       const tomorrow = new Date(today);
       tomorrow.setDate(tomorrow.getDate() + 1);
       result = result.filter((e) => {
-        const d = new Date(e.published.split("T")[0]);
+        const d = new Date(String(e.published ?? "").split("T")[0]);
         return d.toDateString() === tomorrow.toDateString();
       });
     } else if (activeDay === "weekend") {
       result = result.filter((e) => {
-        const d = new Date(e.published);
+        const d = new Date(String(e.published ?? ""));
         return d.getDay() === 0 || d.getDay() === 6;
       });
     }
 
-    return result;
+    return result as (LocalEvent | Record<string, unknown>)[];
   }, [events, activeNeighborhood, showWeekendOnly, activeDay, searchQuery, today]);
 
   // Group by date for "Tonight/Tomorrow" view
   const upcomingDates = useMemo(() => {
     const sorted = [...filtered].sort(
-      (a, b) => new Date(a.published).getTime() - new Date(b.published).getTime()
+      (a, b) => new Date(String(a.published)).getTime() - new Date(String(b.published)).getTime()
     );
     const seen = new Set<string>();
-    const result: { label: string; events: LocalEvent[] }[] = [];
+    const result: { label: string; events: (LocalEvent | Record<string, unknown>)[] }[] = [];
 
     for (const ev of sorted) {
-      const d = new Date(ev.published.split("T")[0]);
+      const d = new Date(String(ev.published).split("T")[0]);
       const key = d.toDateString();
       if (!seen.has(key)) {
         seen.add(key);
@@ -86,7 +86,7 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
           new Date(today.getTime() + 86400000).toDateString();
         const isWeekend = d.getDay() === 0 || d.getDay() === 6;
 
-        let label = formatDate(ev.published);
+        let label = formatDate(String(ev.published));
         if (isToday) label = "Tonight";
         else if (isTomorrow) label = "Tomorrow";
         else if (isWeekend) label = `This Weekend — ${label}`;
@@ -230,46 +230,48 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
           <div key={group.label} className="date-group">
             <h3 className="date-heading">{group.label}</h3>
             <div className="events-grid">
-              {group.events.map((event) => (
-                <article key={event.id} className="event-card">
-                  {event.image && (
+              {group.events.map((event) => {
+                const e = event as Record<string, unknown>;
+                return (
+                <article key={String(e.id ?? "")} className="event-card">
+                  {typeof e.image === 'string' && e.image ? (
                     <div className="event-image">
-                      <img src={event.image} alt={event.title} loading="lazy" />
+                      <img src={String(e.image)} alt={String(e.title ?? "")} loading="lazy" />
                     </div>
-                  )}
+                  ) : null}
                   <div className="event-content">
                     <div className="event-meta-top">
                       <span className="event-time">
-                        {event.time || "8pm"}
+                        {String(e.time ?? "8pm")}
                       </span>
-                      {event.venueSlug && (
+                      {typeof e.venueSlug === 'string' && e.venueSlug ? (
                         <Link
-                          href={`/venues/${event.venueSlug}`}
+                          href={`/venues/${String(e.venueSlug)}`}
                           className="venue-link"
                         >
-                          {event.venue}
+                          {String(e.venue ?? "")}
                         </Link>
-                      )}
-                      <span className="event-neighborhood">{event.neighborhoodName}</span>
+                      ) : null}
+                      <span className="event-neighborhood">{String(e.neighborhoodName ?? "")}</span>
                     </div>
                     <h3>
-                      <Link href={`/events/${encodeURIComponent(event.id)}`}>
-                        {event.title}
+                      <Link href={`/events/${encodeURIComponent(String(e.id ?? ""))}`}>
+                        {String(e.title ?? "")}
                       </Link>
                     </h3>
-                    {event.summary && (
+                    {typeof e.summary === 'string' && e.summary ? (
                       <p className="event-summary">
-                        {event.summary.slice(0, 100)}
-                        {event.summary.length > 100 ? "..." : ""}
+                        {String(e.summary).slice(0, 100)}
+                        {String(e.summary).length > 100 ? "..." : ""}
                       </p>
-                    )}
+                    ) : null}
                     <div className="event-footer">
-                      {event.price && (
-                        <span className="event-price">{event.price}</span>
-                      )}
-                      {event.free && <span className="free-badge">Free</span>}
+                      {typeof e.price === 'string' && e.price ? (
+                        <span className="event-price">{String(e.price)}</span>
+                      ) : null}
+                      {typeof e.free === 'boolean' && e.free ? <span className="free-badge">Free</span> : null}
                       <Link
-                        href={`/events/${encodeURIComponent(event.id)}`}
+                        href={`/events/${encodeURIComponent(String(e.id ?? ""))}`}
                         className="ticket-btn"
                       >
                         Details →
@@ -277,7 +279,8 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
                     </div>
                   </div>
                 </article>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}

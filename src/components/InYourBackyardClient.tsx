@@ -254,6 +254,9 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
                       ) : null}
                       <span className="event-neighborhood">{String(e.neighborhoodName ?? "")}</span>
                     </div>
+                    {typeof e.venue === 'string' && e.venue ? (
+                      <p className="event-venue-top">{e.venue}</p>
+                    ) : null}
                     <h3>
                       <Link href={`/events/${encodeURIComponent(String(e.id ?? ""))}`}>
                         {String(e.title ?? "")}

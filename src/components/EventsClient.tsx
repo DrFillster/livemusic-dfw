@@ -53,6 +53,9 @@ export default function EventsClient({ initialEvents, cities }: Props) {
                 <span className="event-date">{formatDate(event.published)}</span>
                 <span className="event-city">{event.city}</span>
               </div>
+              {event.venue && (
+                <p className="event-venue-top">{event.venue}</p>
+              )}
               <h3>
                 <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
                   {event.title}

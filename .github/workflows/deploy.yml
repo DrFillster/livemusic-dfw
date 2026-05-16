@@ -20,7 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build & Deploy to Cloudflare Workers
+      - name: Copy events data into OpenNext assets
+        run: |
+          mkdir -p .open-next/assets
+          cp src/app/data/local-events.json .open-next/assets/events.json
+          cp src/app/data/local-events.json .open-next/assets/local-events.json
+
+      - name: Deploy to Cloudflare Workers
         run: npm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

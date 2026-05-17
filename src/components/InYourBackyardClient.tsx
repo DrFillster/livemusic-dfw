@@ -19,8 +19,12 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
   const today = new Date();
   const dayOfWeek = today.getDay(); // 0=Sun, 6=Sat
 
+  // Fresh Date computed once per render — used by both useMemos
+  // (computed here so both memos see the same value without stale closure issues)
+  const todayNow = new Date();
+  const todayStr = todayNow.toISOString().split("T")[0];
+
   const filtered = useMemo(() => {
-    const todayStr = today.toISOString().split("T")[0];
     let result = (events as Record<string, unknown>[]).filter((e) => String(e.published ?? "") >= todayStr);
 
     if (searchQuery.trim()) {
@@ -48,10 +52,10 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
     if (activeDay === "today") {
       result = result.filter((e) => {
         const d = new Date(String(e.published ?? "").split("T")[0]);
-        return d.toDateString() === today.toDateString();
+        return d.toDateString() === todayNow.toDateString();
       });
     } else if (activeDay === "tomorrow") {
-      const tomorrow = new Date(today);
+      const tomorrow = new Date(todayNow);
       tomorrow.setDate(tomorrow.getDate() + 1);
       result = result.filter((e) => {
         const d = new Date(String(e.published ?? "").split("T")[0]);
@@ -65,7 +69,7 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
     }
 
     return result as (LocalEvent | Record<string, unknown>)[];
-  }, [events, activeNeighborhood, showWeekendOnly, activeDay, searchQuery, today]);
+  }, [events, activeNeighborhood, showWeekendOnly, activeDay, searchQuery]);
 
   // Group by date for "Tonight/Tomorrow" view
   const upcomingDates = useMemo(() => {
@@ -80,10 +84,10 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
       const key = d.toDateString();
       if (!seen.has(key)) {
         seen.add(key);
-        const isToday = d.toDateString() === today.toDateString();
+        const isToday = d.toDateString() === todayNow.toDateString();
         const isTomorrow =
           d.toDateString() ===
-          new Date(today.getTime() + 86400000).toDateString();
+          new Date(todayNow.getTime() + 86400000).toDateString();
         const isWeekend = d.getDay() === 0 || d.getDay() === 6;
 
         let label = formatDate(String(ev.published));
@@ -96,7 +100,7 @@ export default function InYourBackyardClient({ events, neighborhoods }: Props) {
       result[result.length - 1].events.push(ev);
     }
     return result;
-  }, [filtered, today]);
+  }, [filtered]);
 
   return (
     <div>

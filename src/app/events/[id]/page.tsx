@@ -24,28 +24,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!event) return { title: "Event Not Found" };
 
-  // Handle both LiveEvent (DDN pipeline) and LocalEvent (LMDW native) schemas
   const isLocalEvent = "venueSlug" in event;
   const venueSlug = isLocalEvent ? (event as unknown as LocalEvent).venueSlug : undefined;
   const neighborhoodId = isLocalEvent ? (event as unknown as LocalEvent).neighborhood : undefined;
-  const venueSlug_2 = isLocalEvent ? (event as unknown as LocalEvent).venueSlug : undefined;
-  const venue = venueSlug_2
-    ? venuesData.venues.find((v) => v.slug === venueSlug_2)
+
+  const venue = venueSlug
+    ? venuesData.venues.find((v) => v.slug === venueSlug)
     : undefined;
+
+  const ogImageUrl = event.image || "/og-image.png";
+  const description =
+    event.summary ||
+    `${event.title} at ${event.venue}${neighborhoodId ? " in " + (neighborhoodId.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())) : ""}. Free admission.`;
 
   return {
     title: `${event.title} — ${event.venue} | LiveMusic DFW`,
-    description:
-      event.summary ||
-      `${event.title} at ${event.venue}${isLocalEvent && neighborhoodId ? " in " + neighborhoodId : ""}. ${isLocalEvent && (event as unknown as LocalEvent).free ? "Free admission." : event.price ? `Tickets from ${event.price}.` : ""}`,
+    description,
     openGraph: {
-      title: `${event.title} — ${event.venue}`,
-      description:
-        event.summary ||
-        `${event.title} at ${event.venue}${isLocalEvent && neighborhoodId ? " in " + neighborhoodId : ""}.`,
+      title: `${event.title} — ${event.venue} | LiveMusic DFW`,
+      description,
       type: "website",
       siteName: "LiveMusic DFW",
-      images: event.image ? [{ url: event.image }] : [],
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${event.title} at ${event.venue}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${event.title} at ${event.venue}`,
+      description,
+      images: [ogImageUrl],
     },
     alternates: {
       canonical: `https://livemusic.dailydallasnews.com/events/${encodeURIComponent(event.id)}`,
@@ -57,36 +70,86 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function buildEventSchema(event: LocalEvent, venueSlug?: string) {
-  return {
+function buildEventSchema(event: LocalEvent, venueSlug?: string, venueAddress?: string) {
+  const venue = venueSlug
+    ? venuesData.venues.find((v) => v.slug === venueSlug)
+    : undefined;
+
+  // Build location with geo if available
+  const location: Record<string, unknown> = {
+    "@type": "Place",
+    name: event.venue,
+  };
+  if (venueSlug) {
+    location.url = `https://livemusic.dailydallasnews.com/venues/${venueSlug}`;
+  }
+  if (venue?.address || venueAddress) {
+    location.address = {
+      "@type": "PostalAddress",
+      streetAddress: (venue?.address || venueAddress)?.replace(/,.*$/, ""),
+      addressLocality: "Dallas",
+      addressRegion: "TX",
+      postalCode: "75206",
+      addressCountry: "US",
+    };
+  }
+  if (venue?.geo) {
+    location.geo = {
+      "@type": "GeoCoordinates",
+      latitude: venue.geo.lat,
+      longitude: venue.geo.lng,
+    };
+  }
+
+  // Duration: default to 3 hours for local bar shows
+  const startDate = new Date(event.published);
+  const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000);
+
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Event",
     name: event.title,
     startDate: event.published,
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      url: venueSlug
-        ? `https://livemusic.dailydallasnews.com/venues/${venueSlug}`
-        : undefined,
-    },
-    description: event.description || event.summary,
-    image: event.image || undefined,
-    offers: event.ticketUrl
-      ? {
-          "@type": "Offer",
-          url: event.ticketUrl,
-          price: event.price || "0",
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-        }
-      : undefined,
+    endDate: endDate.toISOString(),
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location,
+    description: event.description || event.summary || `${event.title} at ${event.venue}. A live music event in Dallas-Fort Worth.`,
+    image: event.image || "/og-image.png",
     organizer: {
       "@type": "Organization",
       name: "LiveMusic DFW",
       url: "https://livemusic.dailydallasnews.com",
     },
   };
+
+  // Add performer if we can infer from title
+  if (event.title && event.title.length > 3) {
+    schema.performer = {
+      "@type": "Person",
+      name: event.title,
+    };
+  }
+
+  // Add offers
+  if (event.ticketUrl) {
+    schema.offers = {
+      "@type": "Offer",
+      url: event.ticketUrl,
+      price: event.price || "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    };
+  } else if (event.free || event.price === "") {
+    schema.offers = {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    };
+  }
+
+  return schema;
 }
 
 export default async function EventPage({ params }: Props) {
@@ -100,7 +163,6 @@ export default async function EventPage({ params }: Props) {
     notFound();
   }
 
-  // Safe property accessors that work with both LiveEvent and LocalEvent schemas
   const _event = event as Record<string, unknown>;
   const _venueSlug = String(_event.venueSlug ?? "");
   const _neighborhood = String(_event.neighborhood ?? "");
@@ -116,19 +178,32 @@ export default async function EventPage({ params }: Props) {
   const neighborhood = _neighborhood
     ? venuesData.neighborhoods.find((n) => n.id === _neighborhood)
     : undefined;
-  const eventSchema = buildEventSchema(event, _venueSlug || undefined);
+  const eventSchema = buildEventSchema(event, _venueSlug || undefined, _address);
 
-  // Find related events at same venue (only for LocalEvents with venueSlug)
+  // Find related events at same venue
   const allEvents = localEventsData.events as Record<string, unknown>[];
+  const now = new Date();
   const relatedEvents = _venueSlug
     ? allEvents
         .filter(
           (e) =>
             String(e.venueSlug ?? "") === _venueSlug &&
             String(e.id ?? "") !== event.id &&
-            new Date(String(e.published ?? "")) >= new Date()
+            new Date(String(e.published ?? "")) >= now
         )
         .slice(0, 5) as typeof localEventsData.events
+    : [];
+
+  // Get upcoming events at nearby venues in same neighborhood
+  const nearbyEvents = _neighborhood && !_venueSlug
+    ? allEvents
+        .filter(
+          (e) =>
+            String(e.neighborhood ?? "") === _neighborhood &&
+            String(e.id ?? "") !== event.id &&
+            new Date(String(e.published ?? "")) >= now
+        )
+        .slice(0, 3) as typeof localEventsData.events
     : [];
 
   return (
@@ -198,8 +273,10 @@ export default async function EventPage({ params }: Props) {
             ) : (
               <span className={styles.venueName}>{event.venue}</span>
             )}
-            {_address && (
-              <span className={styles.venueAddress}>{_address}</span>
+            {(venue?.address || _address) && (
+              <span className={styles.venueAddress}>
+                {venue?.address || _address}
+              </span>
             )}
           </div>
 
@@ -218,8 +295,27 @@ export default async function EventPage({ params }: Props) {
         <div className={styles.eventBody}>
           {(_description || event.summary) && (
             <section className={styles.eventSection}>
-              <h2>About</h2>
+              <h2>About This Show</h2>
               <p>{_description || event.summary}</p>
+            </section>
+          )}
+
+          {/* If no description, show auto-generated content */}
+          {!_description && !event.summary && (
+            <section className={styles.eventSection}>
+              <h2>About This Show</h2>
+              <p>
+                {event.title} is performing at{" "}
+                <strong>{event.venue}</strong> in{" "}
+                <strong>
+                  {neighborhood?.name || venue?.neighborhood?.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())}
+                </strong>
+                . This is a free, no-cover live music event in the Dallas-Fort Worth local music scene.
+                {venue?.musicTypes && venue.musicTypes.length > 0 && (
+                  <> Expect {venue.musicTypes.slice(0, 3).join(", ")} vibes.</>
+                )}
+                {" "}Doors open before showtime — arrive early to grab a good spot.
+              </p>
             </section>
           )}
 
@@ -262,7 +358,7 @@ export default async function EventPage({ params }: Props) {
                     href={`/neighborhoods/${venue.neighborhood}`}
                     className={styles.venueActionBtn}
                   >
-                    📍 {neighborhood?.name || venue.neighborhood}
+                    📍 {neighborhood?.name || venue.neighborhood.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())}
                   </Link>
                 </div>
               </div>
@@ -277,25 +373,25 @@ export default async function EventPage({ params }: Props) {
                 <span className={styles.detailLabel}>When</span>
                 <span className={styles.detailValue}>
                   {formatDate(event.published)}
-                  {_time ? ` at ${_time}` : ""}
+                  {_time ? ` at ${_time}` : " (check venue for time)"}
                 </span>
               </div>
               <div className={styles.detailItem}>
                 <span className={styles.detailLabel}>Where</span>
                 <span className={styles.detailValue}>
                   {event.venue}
-                  {_address ? ` — ${_address}` : ""}
+                  {venue?.address || _address ? ` — ${venue?.address || _address}` : ""}
                 </span>
               </div>
               <div className={styles.detailItem}>
                 <span className={styles.detailLabel}>Admission</span>
                 <span className={styles.detailValue}>
                   {_free ? (
-                    <span className={styles.freeTag}>Free</span>
+                    <span className={styles.freeTag}>Free — No cover</span>
                   ) : event.price ? (
                     event.price
                   ) : (
-                    "See venue"
+                    "Free — No cover"
                   )}
                 </span>
               </div>
@@ -340,6 +436,38 @@ export default async function EventPage({ params }: Props) {
                       {eTime && (
                         <span className={styles.relatedTime}>{eTime}</span>
                       )}
+                    </Link>
+                  );
+                })}
+              </div>
+              {venue && (
+                <Link href={`/venues/${venue.slug}`} className={styles.venueActionBtn} style={{ marginTop: "0.75rem", display: "inline-block" }}>
+                  View all shows at {venue.name} →
+                </Link>
+              )}
+            </section>
+          )}
+
+          {/* Nearby events in same neighborhood */}
+          {nearbyEvents.length > 0 && (
+            <section className={styles.eventSection}>
+              <h2>More in {neighborhood?.name || "This Area"}</h2>
+              <div className={styles.relatedList}>
+                {nearbyEvents.map((e) => {
+                  const eSlug = String((e as Record<string, unknown>).venueSlug ?? "");
+                  return (
+                    <Link
+                      key={e.id}
+                      href={`/events/${encodeURIComponent(e.id)}`}
+                      className={styles.relatedItem}
+                    >
+                      <span className={styles.relatedDate}>
+                        {formatDate(e.published)}
+                      </span>
+                      <span className={styles.relatedTitle}>{e.title}</span>
+                      <span className={styles.relatedVenue}>
+                        {String((e as Record<string, unknown>).venue ?? "")}
+                      </span>
                     </Link>
                   );
                 })}

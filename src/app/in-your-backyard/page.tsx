@@ -16,6 +16,21 @@ export async function generateMetadata(): Promise<Metadata> {
         "The bands you haven't heard yet, playing at places you already love. No arena. No ticket fees. Live music in your DFW neighborhood.",
       type: "website",
       siteName: "LiveMusic DFW",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "LiveMusic DFW — Dallas Fort Worth Live Music",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "LiveMusic DFW — Dallas Fort Worth Live Music This Week",
+      description:
+        "The bands you haven't heard yet, playing at places you already love. No arena. No ticket fees. Live music in your DFW neighborhood.",
+      images: ["/og-image.png"],
     },
     alternates: {
       canonical: "https://livemusic.dailydallasnews.com/in-your-backyard",

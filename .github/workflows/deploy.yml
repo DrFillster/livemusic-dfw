@@ -28,6 +28,9 @@ jobs:
           mkdir -p .open-next/assets
           cp src/app/data/local-events.json .open-next/assets/events.json
           cp src/app/data/local-events.json .open-next/assets/local-events.json
+          cp src/app/data/venues.json .open-next/assets/venues.json
+          cp src/app/sitemap.ts .open-next/assets/sitemap.xml
+          cp public/og-image.png .open-next/assets/
 
       - name: Deploy to Cloudflare Workers
         run: npx opennextjs-cloudflare deploy

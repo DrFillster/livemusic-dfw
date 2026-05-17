@@ -67,6 +67,7 @@ export interface Venue {
   description: string;
   cover: string;
   hours: string;
+  geo?: { lat: number; lng: number };
 }
 
 export interface Neighborhood {

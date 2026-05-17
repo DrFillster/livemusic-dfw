@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
+const BASE_URL = "https://livemusic.dailydallasnews.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     template: "%s | LiveMusic DFW",
-    default: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | livemusic.dailydallasnews.com",
+    default: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | LiveMusic DFW",
   },
   description:
     "Discover live music at neighborhood bars and venues across Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
@@ -15,6 +18,22 @@ export const metadata: Metadata = {
       "Discover live music at neighborhood bars across Dallas-Fort Worth. No arena, no ticket fees — just local bands at your favorite spots.",
     type: "website",
     siteName: "LiveMusic DFW",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LiveMusic DFW — Dallas Fort Worth Live Music Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LiveMusic DFW — Dallas Fort Worth Live Music",
+    description:
+      "The bands you haven't heard yet, playing at places you already love. No arena. No ticket fees. Live music in your DFW neighborhood.",
+    images: ["/og-image.png"],
+    site: "@LiveMusicDFW",
   },
   robots: {
     index: true,
@@ -24,16 +43,25 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  keywords: "Dallas live music, Fort Worth concerts, Deep Ellum live music, Lower Greenville bars, Oak Cliff live music, free music DFW",
+  keywords:
+    "Dallas live music, Fort Worth concerts, Deep Ellum live music, Lower Greenville bars, Oak Cliff live music, free music DFW, local bands Dallas, DFW music scene",
 };
 
-const LOCAL_BUSINESS_SCHEMA = {
+const SITE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "WebSite",
   name: "LiveMusic DFW",
-  url: "https://livemusic.dailydallasnews.com",
-  description: "Free guide to live music at neighborhood bars and venues across Dallas-Fort Worth.",
-  sameAs: [],
+  url: BASE_URL,
+  description:
+    "Free guide to live music at neighborhood bars and venues across Dallas-Fort Worth.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${BASE_URL}/in-your-backyard?search={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({
@@ -49,7 +77,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_SCHEMA) }}
         />
       </head>
       <body>

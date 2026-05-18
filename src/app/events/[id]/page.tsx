@@ -105,9 +105,19 @@ function buildEventSchema(event: LocalEvent, venueSlug?: string, venueAddress?: 
   const startDate = new Date(event.published);
   const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000);
 
+  // Determine performer — handle multi-artist titles like "Delta Blues Guest Edward Desabelle"
+  const performerName = event.title || "";
+  const isMultiArtist = performerName.toLowerCase().includes("guest") ||
+    performerName.toLowerCase().includes("feat.") ||
+    performerName.toLowerCase().includes(" ft. ") ||
+    performerName.toLowerCase().includes(" and ");
+  const performerNames = isMultiArtist
+    ? performerName.split(/\s+(?:guest|feat\.?|ft\.?\s+|and)\s+/i).filter((p: string) => p.trim().length > 2)
+    : [performerName];
+
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "Event",
+    "@type": ["MusicEvent", "Event"],
     name: event.title,
     startDate: event.published,
     endDate: endDate.toISOString(),
@@ -123,12 +133,22 @@ function buildEventSchema(event: LocalEvent, venueSlug?: string, venueAddress?: 
     },
   };
 
-  // Add performer if we can infer from title
-  if (event.title && event.title.length > 3) {
+  // Add performer(s) — Person for single, MusicGroup for bands
+  if (performerNames.length === 1 && performerNames[0]) {
     schema.performer = {
-      "@type": "Person",
-      name: event.title,
+      "@type": performerNames[0].length > 30 ? "MusicGroup" : "Person",
+      name: performerNames[0].trim(),
     };
+  } else if (performerNames.length > 1) {
+    schema.performer = performerNames.map((p: string) => ({
+      "@type": p.length > 30 ? "MusicGroup" : "Person",
+      name: p.trim(),
+    }));
+  }
+
+  // Add isAccessibleForFree
+  if (event.free) {
+    schema.isAccessibleForFree = true;
   }
 
   // Add offers

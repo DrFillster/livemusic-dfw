@@ -4,6 +4,48 @@ import "./globals.css";
 
 const BASE_URL = "https://livemusic.dailydallasnews.com";
 
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "LiveMusic DFW",
+  url: BASE_URL,
+  description: "Discover live music at neighborhood bars and venues across Dallas-Fort Worth. Free shows, local bands, no arena fees.",
+  inLanguage: "en-US",
+  publisher: {
+    "@type": "Organization",
+    name: "Daily Dallas News",
+    url: "https://dailydallasnews.com",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${BASE_URL}/in-your-backyard?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const homeItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Free Live Music in Dallas-Fort Worth This Week",
+  description: "Free and low-cost live music shows at neighborhood bars and venues across DFW.",
+  numberOfItems: 10,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, url: `${BASE_URL}/in-your-backyard`, name: "Browse All Shows" },
+    { "@type": "ListItem", position: 2, url: `${BASE_URL}/neighborhoods/deep-ellum`, name: "Deep Ellum Live Music" },
+    { "@type": "ListItem", position: 3, url: `${BASE_URL}/neighborhoods/lower-greenville`, name: "Lower Greenville Live Music" },
+    { "@type": "ListItem", position: 4, url: `${BASE_URL}/neighborhoods/oak-cliff`, name: "Oak Cliff Live Music" },
+    { "@type": "ListItem", position: 5, url: `${BASE_URL}/neighborhoods/bishop-arts`, name: "Bishop Arts Live Music" },
+    { "@type": "ListItem", position: 6, url: `${BASE_URL}/neighborhoods/lakewood`, name: "Lakewood Live Music" },
+    { "@type": "ListItem", position: 7, url: `${BASE_URL}/neighborhoods/fort-worth`, name: "Fort Worth Live Music" },
+    { "@type": "ListItem", position: 8, url: `${BASE_URL}/venues`, name: "All DFW Music Venues" },
+    { "@type": "ListItem", position: 9, url: `${BASE_URL}/about`, name: "About LiveMusic DFW" },
+    { "@type": "ListItem", position: 10, url: `${BASE_URL}/about`, name: "FAQ — Finding Live Music in DFW" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | LiveMusic DFW",
   description:
@@ -42,7 +84,12 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([homePageSchema, homeItemListSchema]) }}
+      />
+      <div
       style={{
         minHeight: "80vh",
         display: "flex",
@@ -153,5 +200,6 @@ export default function HomePage() {
         ))}
       </div>
     </div>
+    </>
   );
 }

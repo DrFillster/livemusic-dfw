@@ -1,327 +1,54 @@
 import { NextResponse } from 'next/server';
+import localEventsData from '@/app/data/local-events.json';
+import venuesData from '@/app/data/venues.json';
 
 export const dynamic = 'force-dynamic';
 
 export default async function GET() {
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  const events = (localEventsData.events || []).map((e: { id: string; published: string }) => ({
+    id: e.id,
+    lastmod: (e.published || '2026-05-17').split('T')[0],
+  }));
+  const venues = (venuesData.venues || []).map((v: { slug: string }) => v.slug);
+  const neighborhoods = (venuesData.neighborhoods || []).map((n: { id: string }) => n.id);
+
+  const baseUrl = 'https://livemusic.dailydallasnews.com';
+  const today = '2026-05-17';
+
+  const staticUrls = [
+    { loc: baseUrl, changefreq: 'daily', priority: '1.0' },
+    { loc: `${baseUrl}/in-your-backyard`, changefreq: 'daily', priority: '0.9' },
+    { loc: `${baseUrl}/neighborhoods`, changefreq: 'weekly', priority: '0.8' },
+    { loc: `${baseUrl}/venues`, changefreq: 'weekly', priority: '0.8' },
+    { loc: `${baseUrl}/about`, changefreq: 'monthly', priority: '0.5' },
+    ...neighborhoods.map((id: string) => ({ loc: `${baseUrl}/neighborhoods/${id}`, changefreq: 'weekly', priority: '0.7' })),
+    ...venues.map((slug: string) => ({ loc: `${baseUrl}/venues/${slug}`, changefreq: 'weekly', priority: '0.7' })),
+  ];
+
+  const eventUrls = events.map((e: { id: string; lastmod: string }) => ({
+    loc: `${baseUrl}/events/${encodeURIComponent(e.id)}`,
+    changefreq: 'monthly',
+    priority: '0.6',
+    lastmod: e.lastmod,
+  }));
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://livemusic.dailydallasnews.com</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/in-your-backyard</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/deep-ellum</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/lower-greenville</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/oak-cliff</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/bishop-arts</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/lakewood</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/fort-worth</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/neighborhoods/downtown-dallas</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/the-goat-dallas</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/lee-harveys</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/double-wide</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/single-wide</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/blue-light</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/the-foundry</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/balcony-club</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/barley-house</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/lakewood-theater</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/granada-theater</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/truck-yard</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/curious-mechanic</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/the-wild-horse</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/lenny-civil</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/madness-at-the-woods</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/kessler-theater</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/across-the-way</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/venues/adairs-saloon</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/the-goat-dallas-texas-slim</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/the-goat-dallas-delta-blues-guest-edward-desab</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/the-goat-dallas-jason-elmore-and-hoodoo-witch</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/the-goat-dallas-texas-kitchen</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/the-goat-dallas-delta-blues-jam</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/lee-harveys-open-mic-1</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/lee-harveys-local-rock-showcase</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/lee-harveys-jukebox-jam</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/double-wide-punk-rock-nite</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/double-wide-local-rock-battle</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/granada-theater-the-texas-john-scholars</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/granada-theater-sold-out-summer-series</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/granada-theater-billow</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/kessler-theater-ana</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/kessler-theater-ghost-note</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/balcony-club-jazz-night-1</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/balcony-club-jazz-night-2</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/adairs-saloon-honky-tonk-friday</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/adairs-saloon-saturday-country</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/truck-yard-weekend-music</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/truck-yard-sunday-funday</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/wild-horse-line-dancing</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://livemusic.dailydallasnews.com/events/wild-horse-country-saturday</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+${staticUrls.map((u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join('\n')}
+${eventUrls.map((e) => `  <url>
+    <loc>${e.loc}</loc>
+    <lastmod>${e.lastmod}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`).join('\n')}
 </urlset>`;
 
-  return new NextResponse(sitemap, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
+  return new NextResponse(xml, {
+    headers: { 'Content-Type': 'application/xml' },
   });
 }

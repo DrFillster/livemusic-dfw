@@ -19,7 +19,26 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function NeighborhoodsPage() {
   const data = venuesData;
 
+  const neighborhoodsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "DFW Neighborhoods with Live Music — LiveMusic DFW",
+    description: "Browse live music venues and events by Dallas-Fort Worth neighborhood. Find shows in Deep Ellum, Lower Greenville, Oak Cliff, Bishop Arts, Lakewood, Fort Worth, and more.",
+    numberOfItems: data.neighborhoods.length,
+    itemListElement: data.neighborhoods.map((n, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://livemusic.dailydallasnews.com/neighborhoods/${n.id}`,
+      name: n.name,
+    })),
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(neighborhoodsSchema) }}
+      />
     <div className={styles.page}>
       <section className={styles.hero}>
         <h1>Neighborhoods</h1>
@@ -38,5 +57,6 @@ export default async function NeighborhoodsPage() {
         ))}
       </section>
     </div>
+    </>
   );
 }

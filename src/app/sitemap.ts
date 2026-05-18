@@ -13,7 +13,7 @@ export default async function GET() {
   const neighborhoods = (venuesData.neighborhoods || []).map((n: { id: string }) => n.id);
 
   const baseUrl = 'https://livemusic.dailydallasnews.com';
-  const today = '2026-05-17';
+  const today = new Date().toISOString().split('T')[0];
 
   const staticUrls = [
     { loc: baseUrl, changefreq: 'daily', priority: '1.0' },

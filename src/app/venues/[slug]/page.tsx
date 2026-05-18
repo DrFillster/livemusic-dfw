@@ -105,6 +105,7 @@ function buildVenueSchema(venue: Venue) {
     url: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
     location,
     telephone: venue.phone || undefined,
+    openingHours: venue.hours || undefined,
     ...(venue.website && { sameAs: [venue.website] }),
   };
 

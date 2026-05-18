@@ -133,7 +133,28 @@ export default async function NeighborhoodPage({ params }: Props) {
   }
 
   return (
-    <div className={styles.page}>
+    <>
+      {neighborhoodEvents.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: `Upcoming Live Music in ${neighborhood.name}`,
+              description: `Live music shows and events happening in ${neighborhood.name}, Dallas-Fort Worth this week.`,
+              numberOfItems: neighborhoodEvents.length,
+              itemListElement: neighborhoodEvents.map((event, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: `https://livemusic.dailydallasnews.com/events/${encodeURIComponent(event.id)}`,
+                name: event.title,
+              })),
+            }),
+          }}
+        />
+      )}
+      <div className={styles.page}>
       <div className={styles.breadcrumb}>
         <Link href="/neighborhoods">← All Neighborhoods</Link>
       </div>
@@ -219,6 +240,7 @@ export default async function NeighborhoodPage({ params }: Props) {
           <Link href="/neighborhoods" style={{ color: "#d97706" }}>← Browse other neighborhoods</Link>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -14,11 +14,35 @@ export const metadata: Metadata = {
   keywords: "DFW music venues, Dallas bars live music, Fort Worth honky tonk, Deep Ellum clubs, live music venues Dallas",
 };
 
+const venuesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "DFW Music Venues — Live Music Bars and Clubs in Dallas-Fort Worth",
+  description:
+    "A curated list of bars, clubs, and venues across the Dallas-Fort Worth metroplex that host regular live music — from Deep Ellum punk rooms to Fort Worth honky-tonks.",
+  numberOfItems: venuesData.venues.length,
+  itemListElement: venuesData.venues.map((venue, index) => {
+    const neighborhood = venuesData.neighborhoods.find((n) => n.id === venue.neighborhood);
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+      name: venue.name,
+      description: venue.description || `${venue.type} in ${neighborhood?.name || venue.neighborhood} — live music in DFW.`,
+    };
+  }),
+};
+
 export default async function VenuesPage() {
   const data = venuesData;
 
   return (
-    <div className={styles.page}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(venuesListSchema) }}
+      />
+      <div className={styles.page}>
       <section className={styles.hero}>
         <h1>Local Venues</h1>
         <p>The bars and spots in DFW where you can catch live music any night of the week.</p>
@@ -47,6 +71,7 @@ export default async function VenuesPage() {
           </Link>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

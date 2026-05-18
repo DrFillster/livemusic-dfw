@@ -180,6 +180,49 @@ export default async function InYourBackyardPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([itemListSchema, ...eventSchemas]) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How do I find free live music in Dallas-Fort Worth?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Browse LiveMusic DFW's in-your-backyard page for free and low-cost shows at neighborhood bars and venues across DFW including Deep Ellum, Lower Greenville, Oak Cliff, Bishop Arts, Lakewood, and Fort Worth.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What neighborhoods in DFW have the most live music?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Deep Ellum has the highest concentration of live music venues in DFW, followed by Lower Greenville, Oak Cliff, Bishop Arts, Lakewood, and downtown Fort Worth. LiveMusic DFW lists shows across all of them.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do I need tickets for bar shows in DFW?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most neighborhood bar shows in DFW are free — no ticket or cover charge. Some venues host ticketed headliner shows. All admission types are listed on LiveMusic DFW.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What types of music can I find at DFW bars?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "DFW neighborhood bars host a wide range of live music including rock, blues, country, jazz, folk, indie, funk, and more. Each venue page on LiveMusic DFW lists the music types it features.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <div className={styles.page}>
         <InYourBackyardClient events={events} neighborhoods={neighborhoods} />
       </div>

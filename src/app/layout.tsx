@@ -47,23 +47,6 @@ export const metadata: Metadata = {
     "Dallas live music, Fort Worth concerts, Deep Ellum live music, Lower Greenville bars, Oak Cliff live music, free music DFW, local bands Dallas, DFW music scene",
 };
 
-const SITE_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "LiveMusic DFW",
-  url: BASE_URL,
-  description:
-    "Free guide to live music at neighborhood bars and venues across Dallas-Fort Worth.",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${BASE_URL}/in-your-backyard?search={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -75,10 +58,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_SCHEMA) }}
-        />
+
       </head>
       <body>
         <header className="masthead">

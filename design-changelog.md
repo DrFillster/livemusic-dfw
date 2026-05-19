@@ -1,4 +1,4 @@
-# Design Changelog — livemusic-dfw
+# Design Changelog — dallas-music-scene
 
 All visual design decisions are logged here. Every entry includes: what changed, why, and the result.
 

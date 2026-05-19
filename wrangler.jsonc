@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
-	"name": "livemusic-dfw",
+	"name": "dallas-music-scene",
 	"compatibility_date": "2026-05-11",
 	"compatibility_flags": [
 		"nodejs_compat",
@@ -10,7 +10,7 @@
 	"services": [
 		{
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "livemusic-dfw"
+			"service": "dallas-music-scene"
 		}
 	],
 	"assets": {

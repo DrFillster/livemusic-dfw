@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
-const BASE_URL = "https://livemusic.dailydallasnews.com";
+const BASE_URL = "https://dallas-music-scene.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -71,7 +71,7 @@ export default function RootLayout({
               <Link href="/neighborhoods">Neighborhoods</Link>
               <Link href="/venues">Venues</Link>
               <Link href="/about">About</Link>
-              <Link href="https://dailydallasnews.com" target="_blank" rel="noopener" className="sister-site">
+              <Link href="https://dallas-music-scene.com" target="_blank" rel="noopener" className="sister-site">
                 ← Daily Dallas News
               </Link>
             </nav>
@@ -81,7 +81,7 @@ export default function RootLayout({
         <footer>
           <p>
             <strong>Part of the DFW News family</strong> —{" "}
-            <a href="https://dailydallasnews.com" target="_blank" rel="noopener">
+            <a href="https://dallas-music-scene.com" target="_blank" rel="noopener">
               Daily Dallas News
             </a>
           </p>

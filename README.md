@@ -1,8 +1,8 @@
 # LiveMusic DFW
 
-DFW live music events aggregator — a filtered view of the [Daily Dallas News](https://dailydallasnews.com) events feed, focused exclusively on live music.
+DFW live music events aggregator — a filtered view of the [Daily Dallas News](https://dallas-music-scene.com) events feed, focused exclusively on live music.
 
-**URL**: https://livemusic.dailydallasnews.com
+**URL**: https://dallas-music-scene.com
 
 ## Tech Stack
 

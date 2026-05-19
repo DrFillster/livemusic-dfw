@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
-const BASE_URL = "https://livemusic.dailydallasnews.com";
+const BASE_URL = "https://dallas-music-scene.com";
 
 const homePageSchema = {
   "@context": "https://schema.org",
@@ -14,7 +14,7 @@ const homePageSchema = {
   publisher: {
     "@type": "Organization",
     name: "Daily Dallas News",
-    url: "https://dailydallasnews.com",
+    url: "https://dallas-music-scene.com",
   },
   potentialAction: {
     "@type": "SearchAction",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   title: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | LiveMusic DFW",
   description:
     "Discover live music at neighborhood bars and venues across Dallas-Fort Worth. Free shows, local bands, no arena fees. Find live music in Deep Ellum, Lower Greenville, Oak Cliff, Fort Worth, and more.",
-  alternates: { canonical: "https://livemusic.dailydallasnews.com" },
+  alternates: { canonical: "https://dallas-music-scene.com" },
   openGraph: {
     title: "LiveMusic DFW — DFW Live Music Calendar",
     description:

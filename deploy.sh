@@ -14,6 +14,6 @@ echo "Copying data files to server bundle..."
 cp public/og-image.png .open-next/assets/ 2>/dev/null || true
 
 echo "Deploying to Cloudflare Workers..."
-npx wrangler deploy --project-name=livemusic-dfw 2>/dev/null || echo "NOTE: Wrangler deploy skipped — CLOUDFLARE_API_TOKEN not set. Build succeeded; deploy manually when token is available."
+npx wrangler deploy --project-name=dallas-music-scene 2>/dev/null || echo "NOTE: Wrangler deploy skipped — CLOUDFLARE_API_TOKEN not set. Build succeeded; deploy manually when token is available."
 
 echo "✓ Build complete! Run 'npx wrangler deploy' manually to deploy."

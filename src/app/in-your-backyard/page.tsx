@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ["/og-image.png"],
     },
     alternates: {
-      canonical: "https://livemusic.dailydallasnews.com/in-your-backyard",
+      canonical: "https://dallas-music-scene.com/in-your-backyard",
     },
     robots: {
       index: true,
@@ -71,7 +71,7 @@ function buildEventSchemas(events: (LocalEvent | Record<string, unknown>)[]) {
       name: String(e.venue ?? ""),
     };
     if (venueSlug) {
-      location.url = `https://livemusic.dailydallasnews.com/venues/${venueSlug}`;
+      location.url = `https://dallas-music-scene.com/venues/${venueSlug}`;
     }
     if (venue?.address) {
       const addressParts = venue.address.split(", ");
@@ -106,7 +106,7 @@ function buildEventSchemas(events: (LocalEvent | Record<string, unknown>)[]) {
       organizer: {
         "@type": "Organization",
         name: "LiveMusic DFW",
-        url: "https://livemusic.dailydallasnews.com",
+        url: "https://dallas-music-scene.com",
       },
     };
 
@@ -161,7 +161,7 @@ function buildItemListSchema(events: (LocalEvent | Record<string, unknown>)[]) {
       return {
         "@type": "ListItem",
         position: index + 1,
-        url: `https://livemusic.dailydallasnews.com/events/${encodeURIComponent(String(e.id ?? ""))}`,
+        url: `https://dallas-music-scene.com/events/${encodeURIComponent(String(e.id ?? ""))}`,
         name: String(e.title ?? ""),
       };
     }),

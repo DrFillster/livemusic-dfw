@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 1,
       },
     ],
-    sitemap: "https://livemusic.dailydallasnews.com/sitemap.xml",
-    host: "https://livemusic.dailydallasnews.com",
+    sitemap: "https://dallas-music-scene.com/sitemap.xml",
+    host: "https://dallas-music-scene.com",
   };
 }

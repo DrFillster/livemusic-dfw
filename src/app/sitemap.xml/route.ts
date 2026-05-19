@@ -12,7 +12,7 @@ export async function GET() {
   const venues = (venuesData.venues || []).map((v: { slug: string }) => v.slug);
   const neighborhoods = (venuesData.neighborhoods || []).map((n: { id: string }) => n.id);
 
-  const baseUrl = 'https://livemusic.dailydallasnews.com';
+  const baseUrl = 'https://dallas-music-scene.com';
   const today = new Date().toISOString().split('T')[0];
 
   const staticUrls = [

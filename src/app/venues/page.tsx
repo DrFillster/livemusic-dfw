@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Browse every DFW music venue with live shows — Deep Ellum punk rooms, Lower Greenville clubs, Oak Cliff intimate stages, Fort Worth honky-tonks. Local bands, no arena fees.",
   alternates: {
-    canonical: "https://livemusic.dailydallasnews.com/venues",
+    canonical: "https://dallas-music-scene.com/venues",
   },
   keywords: "DFW music venues, Dallas bars live music, Fort Worth honky tonk, Deep Ellum clubs, live music venues Dallas, Granada Theater, Longhorn Ballroom, House of Blues DFW",
 };
@@ -26,7 +26,7 @@ const venuesListSchema = {
     return {
       "@type": "ListItem",
       position: index + 1,
-      url: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+      url: `https://dallas-music-scene.com/venues/${venue.slug}`,
       name: venue.name,
       description: venue.description || `${venue.type} in ${neighborhood?.name || venue.neighborhood} — live music in DFW.`,
     };

@@ -1,4 +1,4 @@
-# A/B Test Log — livemusic-dfw
+# A/B Test Log — dallas-music-scene
 
 Active and completed A/B tests for design decisions.
 

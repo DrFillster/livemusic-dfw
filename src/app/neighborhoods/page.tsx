@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Find live music by DFW neighborhood. Browse shows in Deep Ellum, Lower Greenville, Oak Cliff, Bishop Arts, Lakewood, Downtown Dallas, and Fort Worth bars.",
     alternates: {
-      canonical: "https://livemusic.dailydallasnews.com/neighborhoods",
+      canonical: "https://dallas-music-scene.com/neighborhoods",
     },
     keywords: "live music Deep Ellum, live music Lower Greenville, live music Oak Cliff, live music Fort Worth, live music Bishop Arts",
   };
@@ -28,7 +28,7 @@ export default async function NeighborhoodsPage() {
     itemListElement: data.neighborhoods.map((n, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `https://livemusic.dailydallasnews.com/neighborhoods/${n.id}`,
+      url: `https://dallas-music-scene.com/neighborhoods/${n.id}`,
       name: n.name,
     })),
   };

@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [ogImageUrl],
     },
     alternates: {
-      canonical: `https://livemusic.dailydallasnews.com/events/${encodeURIComponent(event.id)}`,
+      canonical: `https://dallas-music-scene.com/events/${encodeURIComponent(event.id)}`,
     },
     robots: {
       index: true,
@@ -81,7 +81,7 @@ function buildEventSchema(event: LocalEvent, venueSlug?: string, venueAddress?: 
     name: event.venue,
   };
   if (venueSlug) {
-    location.url = `https://livemusic.dailydallasnews.com/venues/${venueSlug}`;
+    location.url = `https://dallas-music-scene.com/venues/${venueSlug}`;
   }
   if (venue?.address || venueAddress) {
     location.address = {
@@ -129,7 +129,7 @@ function buildEventSchema(event: LocalEvent, venueSlug?: string, venueAddress?: 
     organizer: {
       "@type": "Organization",
       name: "LiveMusic DFW",
-      url: "https://livemusic.dailydallasnews.com",
+      url: "https://dallas-music-scene.com",
     },
   };
 

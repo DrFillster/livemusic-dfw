@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: ["/og-image.png"],
     },
     alternates: {
-      canonical: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+      canonical: `https://dallas-music-scene.com/venues/${venue.slug}`,
     },
     robots: {
       index: true,
@@ -75,7 +75,7 @@ function buildVenueSchema(venue: Venue) {
   const location: Record<string, unknown> = {
     "@type": "BarOrPub",
     name: venue.name,
-    url: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+    url: `https://dallas-music-scene.com/venues/${venue.slug}`,
     description: venue.description,
   };
 
@@ -102,7 +102,7 @@ function buildVenueSchema(venue: Venue) {
     "@type": ["BarOrPub", "MusicVenue"],
     name: venue.name,
     description: venue.description || `${venue.name} is a live music venue in ${neighborhood?.name || venue.neighborhood}, Dallas-Fort Worth.`,
-    url: `https://livemusic.dailydallasnews.com/venues/${venue.slug}`,
+    url: `https://dallas-music-scene.com/venues/${venue.slug}`,
     location,
     telephone: venue.phone || undefined,
     openingHours: venue.hours || undefined,

@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Live Music in ${neighborhood.name} — DFW | LiveMusic DFW`,
     description: fullDescription,
     alternates: {
-      canonical: `https://livemusic.dailydallasnews.com/neighborhoods/${neighborhood.id}`,
+      canonical: `https://dallas-music-scene.com/neighborhoods/${neighborhood.id}`,
     },
     openGraph: {
       title: `Live Music in ${neighborhood.name} | LiveMusic DFW`,
@@ -147,7 +147,7 @@ export default async function NeighborhoodPage({ params }: Props) {
               itemListElement: neighborhoodEvents.map((event, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
-                url: `https://livemusic.dailydallasnews.com/events/${encodeURIComponent(event.id)}`,
+                url: `https://dallas-music-scene.com/events/${encodeURIComponent(event.id)}`,
                 name: event.title,
               })),
             }),

@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "generated": "2026-05-18T19:33:11.556633-06:00",
-  "total": 242,
+  "generated": "2026-05-18T20:04:15.986395-06:00",
+  "total": 241,
   "events": [
     {
       "id": "pk-34438",
@@ -42,27 +42,6 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://truckyard.com/event/todd-stewart-20/",
-      "score": 0.0,
-      "neighborhood": "lower-greenville"
-    },
-    {
-      "id": "Z7r9jZ1A7btGN",
-      "idType": "event",
-      "title": "Mac DeMarco",
-      "url": "https://www.ticketmaster.com/event/Z7r9jZ1A7btGN",
-      "summary": "",
-      "published": "2026-05-19",
-      "source": "Ticketmaster",
-      "sourceLogo": "TM",
-      "author": "Longhorn Ballroom - Dallas",
-      "image": "https://s1.ticketm.net/dam/a/51a/abf7eafe-6520-4fa5-929d-89b03e13951a_TABLET_LANDSCAPE_3_2.jpg",
-      "authority": 0.7,
-      "category": "music",
-      "venue": "Longhorn Ballroom - Dallas",
-      "venueAddress": "216 Corinth St, Dallas, TX, US",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7btGN",
       "score": 0.0,
       "neighborhood": "lower-greenville"
     },

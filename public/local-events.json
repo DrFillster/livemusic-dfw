@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "generated": "2026-05-18T23:01:54.096465-06:00",
-  "total": 240,
+  "generated": "2026-05-19T00:07:50.376763-06:00",
+  "total": 234,
   "events": [
     {
       "id": "truck-20260519-alex-aguilar",
@@ -22,7 +22,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/alex-aguilar-51/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbzEg8Boq",
@@ -42,7 +42,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/eric-johnson-texaphonic-tour-2026-fort-worth-texas-05-19-2026/event/0C006389F543A45D",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-87175",
@@ -62,7 +63,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/87175-soccers-coming-home-men-in-blazers-countdown-tour-22-days-out-live-from-dallas-presented-by-bank-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "truck-20260520-colton-blue-1",
@@ -83,7 +85,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/colton-blue-19/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_d982q_e",
@@ -104,7 +106,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/elmiene-sounds-for-someone-tour-dallas-texas-05-20-2026/event/0C006435D03DD642",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "truck-20260521-jason-hatch",
@@ -125,7 +127,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/jason-hatch-33/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-63227",
@@ -146,7 +148,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/63227-miss-gay-usofa-2026-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-65144",
@@ -166,7 +168,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/65144-esperanza-spalding-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260522-jason-elmore-an",
@@ -187,7 +190,7 @@
       "price": "",
       "ticketUrl": "https://www.thegoatdallas.com/gigs.html",
       "score": 0.0,
-      "neighborhood": "deep-ellum"
+      "neighborhood": "lakewood"
     },
     {
       "id": "truck-20260522-rodney-smith",
@@ -208,28 +211,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/rodney-smith-14/",
       "score": 0.0,
-      "neighborhood": "lakewood"
-    },
-    {
-      "id": "lee-20260522-thin-white-duke",
-      "idType": "event",
-      "title": "Thin White Dukes",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-05-22",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
-      "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_65A9Dqp",
@@ -249,7 +231,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/sammy-kershaw-fort-worth-texas-05-22-2026/event/0C006472C55FB756",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7x9a8",
@@ -269,7 +252,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x9a8",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-77649",
@@ -290,7 +274,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/77649-rush-tribute-analog-kids-performing-fly-by-night-and-hits-from-all-the-worlds-a-stage-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260523-texas-kitchen",
@@ -311,7 +295,7 @@
       "price": "",
       "ticketUrl": "https://www.thegoatdallas.com/gigs.html",
       "score": 0.0,
-      "neighborhood": "deep-ellum"
+      "neighborhood": "lakewood"
     },
     {
       "id": "truck-20260523-squeezebox-band",
@@ -332,7 +316,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/squeezebox-bandits-3/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "truck-20260523-two-guys-walk-i",
@@ -353,28 +337,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/two-guys-walk-into-a-bar-6/",
       "score": 0.0,
-      "neighborhood": "lakewood"
-    },
-    {
-      "id": "lee-20260523-madonna-drama",
-      "idType": "event",
-      "title": "Madonna Drama",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-05-23",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
-      "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7xffI",
@@ -394,7 +357,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xffI",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-57643",
@@ -415,7 +379,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/57643-geeks-who-drink-trivia-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-97136",
@@ -435,7 +399,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/97136-hardwood-summer-jam-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "truck-20260524-brian-lynn-jone",
@@ -456,7 +421,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/brian-lynn-jones-25/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbVTjBPb1",
@@ -477,7 +442,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/echo-the-bunnymen-more-songs-to-dallas-texas-05-24-2026/event/0C00634FDCEA560A",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "truck-20260525-leecie-paige",
@@ -498,7 +463,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/leecie-page-2/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "truck-20260526-alex-aguilar",
@@ -519,7 +484,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/alex-aguilar-52/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6ONuoSR",
@@ -540,7 +505,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/nazareth-dallas-texas-05-27-2026/event/0C00647823351CEF",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "truck-20260527-jonathan-wallac",
@@ -561,7 +526,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/jonathan-wallace-17/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-82527",
@@ -582,7 +547,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/82527-kitty-kat-ball-with-nini-coco-darlene-mitchell-myki-meeks-and-juicy-love-dion-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "truck-20260528-justin-myers",
@@ -603,7 +568,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/justin-myers-26/",
       "score": 0.0,
-      "neighborhood": "lakewood"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_ej7g9Sd",
@@ -623,7 +588,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/zoso-a-tribute-to-led-zeppelin-fort-worth-texas-05-28-2026/event/0C00642704D57CC3",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7xA8x",
@@ -643,7 +609,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xA8x",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-82928",
@@ -664,7 +631,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/82928-u2-tribute-vertigo-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-95285",
@@ -684,7 +651,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/95285-jub-jam-xv-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260529-legendary-woo-b",
@@ -705,7 +673,7 @@
       "price": "",
       "ticketUrl": "https://www.thegoatdallas.com/gigs.html",
       "score": 0.0,
-      "neighborhood": "deep-ellum"
+      "neighborhood": "lakewood"
     },
     {
       "id": "truck-20260529-jonathan-arthur",
@@ -726,28 +694,7 @@
       "price": "",
       "ticketUrl": "https://truckyard.com/event/jonathan-arthur-21/",
       "score": 0.0,
-      "neighborhood": "lakewood"
-    },
-    {
-      "id": "lee-20260529-circleback",
-      "idType": "event",
-      "title": "Circleback",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-05-29",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
-      "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbyZfv_mX",
@@ -768,7 +715,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/esteman-daniela-spalla-amorio-usa-tour-dallas-texas-05-29-2026/event/0C00639014059BBE",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "the-20260530-ct-davis-powerh",
@@ -789,7 +736,7 @@
       "price": "",
       "ticketUrl": "https://www.thegoatdallas.com/gigs.html",
       "score": 0.0,
-      "neighborhood": "deep-ellum"
+      "neighborhood": "lakewood"
     },
     {
       "id": "Z7r9jZ1A7O6Qd",
@@ -809,7 +756,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7O6Qd",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-32661",
@@ -830,7 +778,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/32661-paul-gilbert-with-special-guest-greg-koch-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-35575",
@@ -850,28 +798,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/35575-braxton-keith-dallas",
-      "score": 0.0
-    },
-    {
-      "id": "lee-20260530-lecure",
-      "idType": "event",
-      "title": "LeCure",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-05-30",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
       "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-19196",
@@ -891,7 +819,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/19196-the-string-cheese-incident-just-keep-spinning-tour-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6jn5r8Q",
@@ -912,7 +841,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/bricks-in-the-wall-dallas-texas-05-30-2026/event/0C0064772A2DE41A",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7xfft",
@@ -932,7 +861,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xfft",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7xF4v",
@@ -952,7 +882,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xF4v",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-48753",
@@ -973,7 +904,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/48753-geeks-who-drink-trivia-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_dEpO1fU",
@@ -994,7 +925,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/alyssa-edwards-thanks-for-everything-tour-dallas-texas-05-31-2026/event/0C006439D680A536",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-58292",
@@ -1015,7 +946,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/58292-royal-dukes-band-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-61552",
@@ -1036,7 +967,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/61552-jordan-jensen-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260604-june-early-oke",
@@ -1057,7 +988,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/june-early-oke/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "vvG1YZ_A3TIX6F",
@@ -1078,7 +1009,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/tk-from-ling-tosite-sigure-tour-dallas-texas-06-04-2026/event/0C006454BFA3E1C8",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7xpO_",
@@ -1098,7 +1029,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xpO_",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-A_Y",
@@ -1119,7 +1051,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-A_Y",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-57346",
@@ -1140,28 +1072,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/57346-slipknot-tribute-sic-with-limp-bizkit-tribute-siff-bizkit-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
-    },
-    {
-      "id": "lee-20260605-texas-bluesman-",
-      "idType": "event",
-      "title": "Texas Bluesman Tribute to the Blu Bros",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-06-05",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
-      "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FMC51_y",
@@ -1182,7 +1093,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/queen-and-king-of-reality-show-dallas-texas-06-06-2026/event/0C00648DCE2CA679",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7x9aZ",
@@ -1202,7 +1113,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x9aZ",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-19277",
@@ -1223,7 +1135,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/19277-gimme-gimme-disco-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-14227",
@@ -1243,28 +1155,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/14227-marc-rebillet-and-3-jambaloo-music-prize-finalists-and-more-tba-dallas",
-      "score": 0.0
-    },
-    {
-      "id": "lee-20260606-stone-texas-pil",
-      "idType": "event",
-      "title": "Stone Texas Pilots",
-      "url": "https://www.leeharveysdallas.com",
-      "summary": "",
-      "published": "2026-06-06",
-      "source": "Lee Harvey's",
-      "sourceLogo": "LEE",
-      "author": "Lee Harvey's",
-      "image": "",
-      "authority": 0.75,
-      "category": "music",
-      "venue": "Lee Harvey's",
-      "venueAddress": "1920 S Beckley Ave, Dallas, TX 75208",
-      "city": "Dallas",
-      "price": "",
-      "ticketUrl": "https://www.leeharveysdallas.com",
       "score": 0.0,
-      "neighborhood": "bishop-arts"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6eL2psg",
@@ -1284,7 +1176,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/hayes-carll-were-only-human-tour-fort-worth-texas-06-06-2026/event/0C0064709F3D6C75",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_a96hGty",
@@ -1304,7 +1197,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/cumbiatron-the-cumbia-rave-21-event-dallas-texas-06-06-2026/event/0C006495C76CCA79",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A70_ke",
@@ -1324,7 +1218,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_ke",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "the-20260607-rpg-drag!-campa",
@@ -1345,7 +1240,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/rpg-drag-campaign-1/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "vvG1YZ_aKD9CQZ",
@@ -1366,7 +1261,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/corbyn-besson-and-soulidified-the-popn-dallas-texas-06-07-2026/event/0C006494FB5CE680",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6R3wuo0",
@@ -1386,7 +1281,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/french-montana-x-max-b-wave-dallas-texas-06-08-2026/event/0C00647BD2C8D464",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-54413",
@@ -1407,7 +1303,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/54413-wolfmother-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_AGXKF8_",
@@ -1427,7 +1323,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/between-the-buried-and-me-the-fort-worth-texas-06-11-2026/event/0C0064533E4C8419",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZbgsgt-yV",
@@ -1448,7 +1345,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-prince-experience-18-event-dallas-texas-06-11-2026/event/0C00635C75A61E74",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6bKO3ND",
@@ -1468,7 +1365,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/big-krit-the-world-is-a-dallas-texas-06-11-2026/event/0C006476138128FB",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-84288",
@@ -1489,7 +1387,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/84288-buckethead-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6dRNlw1",
@@ -1509,7 +1407,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/straight-tequila-night-the-original-tribute-fort-worth-texas-06-12-2026/event/0C006470EF8EBC8A",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-ofe",
@@ -1529,7 +1428,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-ofe",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-52245",
@@ -1550,7 +1450,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/52245-elton-john-tribute-the-elton-johns-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-18398",
@@ -1571,7 +1471,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/18398-overstreet-knox-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6dR0Dw2",
@@ -1591,7 +1491,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/straight-tequila-night-the-original-tribute-fort-worth-texas-06-13-2026/event/0C006470EF93BC8F",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7x9a6",
@@ -1611,7 +1512,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x9a6",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_eM7MM8b",
@@ -1632,7 +1534,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/audrey-hobert-the-staircase-to-stardom-dallas-texas-06-16-2026/event/0C00642DC4DF7418",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-91157",
@@ -1653,7 +1555,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/91157-rx-bandits-and-the-battle-begun-20th-anniversary-tour-with-maps-and-atlases-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_kKyZ-y8",
@@ -1673,7 +1575,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/thievery-corporation-30-year-anniversary-fort-worth-texas-06-16-2026/event/0C006464F9021E50",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_kpXmGhU",
@@ -1694,7 +1597,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/yebba-jean-tour-dallas-texas-06-17-2026/event/0C006465BEB8C6F6",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-31418",
@@ -1714,7 +1617,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/31418-ryan-bingham-and-the-texas-gentlemen-still-gettin-away-with-it-tour-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_kQJgQom",
@@ -1734,7 +1638,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/thievery-corporation-dallas-texas-06-18-2026/event/0C006466A6D5A46E",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-16963",
@@ -1755,7 +1660,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/16963-gary-hoey-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260619-coco-montrese",
@@ -1776,7 +1681,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/coco-montrese/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "vvG1YZ_1RCAajz",
@@ -1797,7 +1702,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-molly-ringwalds-dallas-texas-06-19-2026/event/0C0064ABCE149738",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_799aDy-",
@@ -1817,7 +1722,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/kevin-morby-fort-worth-texas-06-19-2026/event/0C006445D727BE61",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A707uf",
@@ -1837,7 +1743,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A707uf",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-34311",
@@ -1858,7 +1765,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/34311-whip-it-fest-2026-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260620-june-kink-night",
@@ -1879,7 +1786,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/june-kink-night/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "vvG1YZ_6efzPMg",
@@ -1899,7 +1806,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-molly-ringwalds-experience-the-80s-fort-worth-texas-06-20-2026/event/0C00647094E25DF5",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-b_S",
@@ -1919,7 +1827,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-b_S",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_AKn_dHo",
@@ -1940,7 +1849,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/idobi-radio-summer-school-w-honey-dallas-texas-06-23-2026/event/0C006454EA643F11",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_kYhKvRm",
@@ -1961,7 +1870,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/jinjer-duel-north-america-2026-dallas-texas-06-24-2026/event/0C00646C1B4C1BEE",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_7MxuCxR",
@@ -1981,7 +1890,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/augustana-and-phantom-planet-fort-worth-texas-06-24-2026/event/0C00644DE234E8AF",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-92381",
@@ -2001,7 +1911,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/92381-buju-banton-and-stephen-marley-roots-and-rhymes-summer-tour-2026-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-47968",
@@ -2022,7 +1933,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/47968-tom-keifer-with-special-guests-la-guns-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6Kdenh6",
@@ -2042,7 +1953,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/ez-band-fort-worth-texas-06-26-2026/event/0C006474C30AA6C7",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_kRPSjhQ",
@@ -2063,7 +1975,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/alex-isley-when-the-city-sleeps-dallas-texas-06-26-2026/event/0C00646BE5CDC6DA",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7x8ak",
@@ -2083,7 +1995,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x8ak",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7x9Fy",
@@ -2103,7 +2016,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x9Fy",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7x8ak",
@@ -2123,7 +2037,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x8ak",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-32274",
@@ -2144,7 +2059,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/32274-2000s-rave-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7-_Ps",
@@ -2164,7 +2079,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-_Ps",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "the-20260702-july-early-oke",
@@ -2185,7 +2101,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/july-early-oke/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "Z7r9jZ1A70_kd",
@@ -2205,7 +2121,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kd",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-82652",
@@ -2226,7 +2143,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/82652-madonna-tribute-primadonna-celebrating-40-years-of-true-blue-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FE6xcqA",
@@ -2246,7 +2163,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/caden-gilliard-fort-worth-texas-07-03-2026/event/0C006489C78AD745",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-w33",
@@ -2266,7 +2184,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-w33",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-27784",
@@ -2287,7 +2206,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/27784-royal-dukes-band-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-76912",
@@ -2308,7 +2227,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/76912-corrosion-of-conformity-with-whores-and-crobot-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-59718",
@@ -2329,7 +2248,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/59718-tool-tribute-jambi-with-deftone-tribute-elite-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FLjICkm",
@@ -2350,7 +2269,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/latin-legacy-tour-mc-magic-baby-dallas-texas-07-10-2026/event/0C006487DCA0E1AE",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7-N09",
@@ -2370,7 +2289,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-N09",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_ambWIlf",
@@ -2390,7 +2310,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/turnpike-tributedours-the-ultimate-turnpike-troubadours-fort-worth-texas-07-11-2026/event/0C00649B98F68AD4",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A707uK",
@@ -2410,7 +2331,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A707uK",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-89937",
@@ -2430,7 +2352,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/89937-kurt-vile-and-the-violators-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6FYrkmC",
@@ -2451,7 +2374,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/kail-lowry-fatherless-behavior-tour-dallas-texas-07-16-2026/event/0C00647230786B8E",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-64452",
@@ -2472,7 +2395,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/64452-high-fade-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_aih5nsV",
@@ -2492,7 +2415,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/biscuits-and-jams-presents-st-paul-fort-worth-texas-07-17-2026/event/0C00649B1B2EAC74",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A70kb_",
@@ -2512,7 +2436,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70kb_",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-63988",
@@ -2533,7 +2458,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/63988-journey-tribute-journey-of-a-lifetime-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "the-20260717-pick-of-the-gli",
@@ -2554,7 +2479,7 @@
       "price": "",
       "ticketUrl": "https://www.thebalconyclub.com/event/pick-of-the-glitter/",
       "score": 0.0,
-      "neighborhood": "downtown"
+      "neighborhood": "lakewood"
     },
     {
       "id": "Z7r9jZ1A7-gZE",
@@ -2574,7 +2499,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-gZE",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-96982",
@@ -2595,7 +2521,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/96982-cant-feel-my-face-2010s-dance-party-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_klwirSF",
@@ -2616,7 +2542,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/noise-complaints-presents-the-late-night-dallas-texas-07-18-2026/event/0C00646AF2B1ECC8",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7x4_6",
@@ -2636,7 +2562,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7x4_6",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-92651",
@@ -2657,7 +2584,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/92651-tomahawk-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7-NAx",
@@ -2678,7 +2605,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-NAx",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_knp-EG_",
@@ -2699,7 +2626,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-marvelous-miss-gender-starring-bosco-dallas-texas-07-23-2026/event/0C00646A96867319",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7-kfz",
@@ -2741,7 +2668,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/83236-yacht-rock-tribute-captain-and-camille-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_abGW4uw",
@@ -2761,7 +2688,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/shane-mcanally-fort-worth-texas-07-24-2026/event/0C0064960CF55372",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-U16",
@@ -2781,7 +2709,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-U16",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-58814",
@@ -2802,7 +2731,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/58814-the-nixons-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-52623",
@@ -2823,7 +2752,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/52623-topline-addicts-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_kEEXGl3",
@@ -2844,7 +2773,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-pretty-reckless-dear-god-tour-dallas-texas-07-25-2026/event/0C006469E7F8CAD2",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6Ts12l0",
@@ -2864,7 +2793,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/junior-brown-fort-worth-texas-07-25-2026/event/0C00647FF128FAE4",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-bG3",
@@ -2884,7 +2814,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-bG3",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-12171",
@@ -2905,7 +2836,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/12171-the-fixx-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_6KvHQpL",
@@ -2925,7 +2856,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/coheed-and-cambria-fort-worth-texas-07-28-2026/event/0C006474C1F1A59F",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_7SFOuCs",
@@ -2946,7 +2878,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/thunder-from-down-under-18-event-dallas-texas-07-31-2026/event/0C00644CC880D3B1",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_k8tcMo9",
@@ -2967,7 +2899,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/strangelove-the-depeche-mode-experience-dallas-texas-08-01-2026/event/0C00646429B77457",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_kQiGQU-",
@@ -2987,7 +2919,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/strait-country-fort-worth-texas-08-01-2026/event/0C006466AC31ADA1",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A70bop",
@@ -3007,7 +2940,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70bop",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-68923",
@@ -3028,7 +2962,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/68923-royal-dukes-band-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-55824",
@@ -3049,7 +2983,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/55824-driveways-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A70_k7",
@@ -3069,7 +3003,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_k7",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-77544",
@@ -3090,7 +3025,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/77544-eagles-of-death-metal-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_af8wm7H",
@@ -3110,7 +3045,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/afroman-fort-worth-texas-08-07-2026/event/0C00649510CAE13C",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7xAFy",
@@ -3130,7 +3066,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xAFy",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-67843",
@@ -3151,7 +3088,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/67843-phish-tribute-a-live-one-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A708P_",
@@ -3171,7 +3108,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A708P_",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-yvw",
@@ -3192,7 +3130,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-yvw",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_7Md8lTF",
@@ -3213,7 +3151,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/poppy-constantly-nowhere-tour-dallas-texas-08-12-2026/event/0C00644DC342BFC8",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_FJnqQ6y",
@@ -3234,7 +3172,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/clarent-us-tour-dallas-texas-08-13-2026/event/0C006489AA75A1F9",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-26816",
@@ -3255,7 +3193,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/26816-monte-montgomery-birthday-bash-with-special-guest-madam-radar-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_ei4-zgm",
@@ -3276,7 +3214,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/mario-aguilar-diezmadre-dallas-texas-08-14-2026/event/0C00642B15878D6E",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7O0_w",
@@ -3296,7 +3234,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7O0_w",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_1NnSws-",
@@ -3316,7 +3255,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/ghostland-observatory-fort-worth-texas-08-14-2026/event/0C0064A8EACF2C61",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-87285",
@@ -3337,7 +3277,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/87285-little-stranger-with-tropidelic-and-jarv-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_khCDWHE",
@@ -3358,7 +3298,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/franz-ferdinand-greater-glasgow-cultural-exchange-dallas-texas-08-15-2026/event/0C006466CEEFDF27",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-63921",
@@ -3379,7 +3319,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/63921-willow-avalon-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-97759",
@@ -3400,7 +3340,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/97759-st-lucia-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-51413",
@@ -3421,7 +3361,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/51413-chne-film-tour-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FDpxGWK",
@@ -3442,7 +3382,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/devildriver-strike-and-kill-tour-w-dallas-texas-08-22-2026/event/0C00648ED688CF53",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7xaFg",
@@ -3462,7 +3402,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xaFg",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-77938",
@@ -3483,7 +3424,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/77938-jon22-with-della-rose-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A70Aoe",
@@ -3503,7 +3444,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70Aoe",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7-bGt",
@@ -3544,7 +3486,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-NF9",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-49178",
@@ -3565,7 +3508,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/49178-royal-dukes-band-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_a7I1xrq",
@@ -3586,7 +3529,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/buckcherry-black-stone-cherry-dallas-texas-09-03-2026/event/0C006491282A279D",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A70oef",
@@ -3606,7 +3549,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70oef",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A7xfpk",
@@ -3626,7 +3570,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xfpk",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_a9gHdjH",
@@ -3646,7 +3591,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/a-man-named-cash-johnny-cash-fort-worth-texas-09-04-2026/event/0C006495F5F0373C",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A70_kA",
@@ -3666,7 +3612,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kA",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-33719",
@@ -3687,7 +3634,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/33719-arlo-parks-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FCMeHOX",
@@ -3708,7 +3655,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/jutes-smile-youre-on-tour-dallas-texas-09-10-2026/event/0C006483B70BC83E",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A7-x0y",
@@ -3729,7 +3676,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-x0y",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-79428",
@@ -3750,7 +3697,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/79428-jet-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-36516",
@@ -3771,7 +3718,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/36516-cabaret-voltaire-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A70_kk",
@@ -3791,7 +3738,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kk",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-43632",
@@ -3811,7 +3759,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/43632-sex-pistols-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbsCw4dgT",
@@ -3832,7 +3781,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/peter-hook-the-light-north-american-dallas-texas-09-11-2026/event/0C006313B2543D7F",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A74-eA",
@@ -3852,7 +3801,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A74-eA",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbiMZ3fEI",
@@ -3872,7 +3822,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/geoff-tates-operation-mindcrime-the-final-fort-worth-texas-09-12-2026/event/0C0062CDC04949E8",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "Z7r9jZ1A708Pb",
@@ -3892,7 +3843,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A708Pb",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZbiYPhPvP",
@@ -3912,7 +3864,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/geoff-tates-operation-mindcrime-the-final-dallas-texas-09-13-2026/event/0C0062CC256E5065",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_7Q_ZkNV",
@@ -3933,7 +3886,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/wasp-1984-to-headless-dallas-texas-09-18-2026/event/0C006446990068F4",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6FGbxq5",
@@ -3954,7 +3907,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/slayyyter-wort-girl-in-the-world-dallas-texas-09-19-2026/event/0C0064720C62274B",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6557DyK",
@@ -3974,7 +3927,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/built-to-spill-fort-worth-texas-09-22-2026/event/0C006472CB13BE53",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_6b8Px-C",
@@ -3994,7 +3948,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/built-to-spill-dallas-texas-09-23-2026/event/0C0064761096284E",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_ARL9f7T",
@@ -4015,7 +3970,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/thats-not-me-comedy-tour-with-dallas-texas-09-25-2026/event/0C00645BDF5D413F",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_ategzK0",
@@ -4035,7 +3990,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/gable-price-and-friends-too-good-dallas-texas-09-24-2026/event/0C00649A42D784E4",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_ahyiCJ2",
@@ -4055,7 +4011,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/dean-stanfield-fort-worth-texas-09-25-2026/event/0C006496F9B0E98F",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-83983",
@@ -4076,7 +4033,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/83983-ariel-posen-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_FV41Rhd",
@@ -4097,7 +4054,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/tinlicker-north-america-2026-dallas-texas-09-29-2026/event/0C00648D152AF6C3",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6Dtt5t_",
@@ -4118,7 +4075,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/akeem-ali-the-texture-tour-dallas-texas-10-10-2026/event/0C00647EE9A4BA59",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_FEfQrET",
@@ -4139,7 +4096,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/cavetown-running-with-scissors-tour-dallas-texas-10-12-2026/event/0C006489D469E9FF",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_16CqDC4",
@@ -4159,7 +4116,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/l7-the-last-hurrah-tour-2026-dallas-texas-10-13-2026/event/0C0064A1CE77B395",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_6mQ-EKr",
@@ -4180,7 +4138,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/president-north-american-campaign-2026-dallas-texas-10-14-2026/event/0C00647B9A8674DE",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-65882",
@@ -4201,7 +4159,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/65882-kishi-bashi-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_1xE3yRz",
@@ -4222,7 +4180,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/basement-dallas-texas-10-16-2026/event/0C0064A8A74B9BF8",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "Z7r9jZ1A70_k6",
@@ -4242,7 +4200,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70_k6",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-69664",
@@ -4263,7 +4222,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/69664-snarky-puppy-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-55797",
@@ -4284,7 +4243,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/55797-butttootking-lydia-b-kollins-suzie-toot-and-kori-king-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-62879",
@@ -4304,7 +4263,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/62879-black-country-new-road-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_1ToBHlE",
@@ -4324,7 +4284,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/mico-running-from-a-feeling-tour-dallas-texas-10-22-2026/event/0C0064AFD1EBCAE7",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-35252",
@@ -4345,7 +4306,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/35252-book-of-love-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZbgQetoBB",
@@ -4365,7 +4326,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://on.fgtix.com/trk/nzwec",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "pk-94731",
@@ -4386,7 +4348,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/94731-artikal-sound-system-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-28165",
@@ -4406,7 +4368,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/28165-killer-queen-a-tribute-to-queen-ft-patrick-myers-as-freddie-mercury-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7xpPO",
@@ -4426,7 +4389,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xpPO",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_aqXPE01",
@@ -4446,7 +4410,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/emei-night-at-the-opera-tour-dallas-texas-10-27-2026/event/0C0064977E96790A",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_1xYxngE",
@@ -4467,7 +4432,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/saosin-20-years-of-selftitled-dallas-texas-10-28-2026/event/0C0064A8B08AAD67",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_1h44Pqo",
@@ -4488,7 +4453,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/cameron-whitcomb-kingdom-of-fear-tour-dallas-texas-10-30-2026/event/0C0064A6D5565751",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_1xB9hXQ",
@@ -4508,7 +4473,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/slow-pulp-dallas-texas-11-03-2026/event/0C0064A8BA5DBF9A",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-59753",
@@ -4529,7 +4495,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/59753-the-damned-50th-anniversary-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-27358",
@@ -4550,7 +4516,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/27358-shadowgrass-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_dniQzjd",
@@ -4571,7 +4537,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/ub40-the-unstoppable-tour-dallas-texas-11-06-2026/event/0C00643AAC6B8703",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_F2ZKcJC",
@@ -4591,7 +4557,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/grateful-shred-dallas-texas-11-06-2026/event/0C006483C04ED98E",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-67884",
@@ -4612,7 +4579,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/67884-low-cut-connnie-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_kSQ75Mg",
@@ -4633,7 +4600,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/dance-now-dallas-texas-11-07-2026/event/0C00646CDA10BDF5",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_aNQK40i",
@@ -4654,7 +4621,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/bad-gyal-mas-cara-world-tour-dallas-texas-11-08-2026/event/0C006498DA4D592C",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_a7Xwp3d",
@@ -4675,7 +4642,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/streetlight-manifesto-the-presence-of-the-dallas-texas-11-13-2026/event/0C0064913EC96483",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_FMhH5rm",
@@ -4695,7 +4662,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/two-nights-with-they-might-be-dallas-texas-11-13-2026/event/0C00648DDBF0B7AE",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "vvG1YZ_FMhW5rz",
@@ -4715,7 +4683,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/two-nights-with-they-might-be-dallas-texas-11-14-2026/event/0C00648DDBF4B7B8",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-62716",
@@ -4735,7 +4704,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/62716-tab-benoit-with-special-guest-jesse-dayton-dallas",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_1xWxG8B",
@@ -4755,7 +4725,8 @@
       "city": "Dallas",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/an-evening-with-band-of-horses-dallas-texas-11-20-2026/event/0C0064A8BD88C43A",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-14639",
@@ -4776,7 +4747,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/14639-dad-rock-night-2000s-rock-tribute-presented-by-council-hill-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_1xXzHbt",
@@ -4797,7 +4768,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/flex-la-factoria-makano-y-josenid-dallas-texas-11-28-2026/event/0C0064A8BEE3C629",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-22449",
@@ -4818,7 +4789,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/22449-davide-de-pierro-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-54491",
@@ -4839,7 +4810,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/54491-steve-hofstetter-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "Z7r9jZ1A7r7pe",
@@ -4860,7 +4831,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7r7pe",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "vvG1YZ_1baMjoP",
@@ -4880,7 +4851,8 @@
       "city": "Fort Worth",
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/ashley-cooke-the-baby-blues-tour-fort-worth-texas-02-19-2027/event/0C0064A609DDC465",
-      "score": 0.0
+      "score": 0.0,
+      "neighborhood": "fort-worth"
     },
     {
       "id": "vvG1YZ_arfBDVj",
@@ -4901,7 +4873,7 @@
       "price": "",
       "ticketUrl": "https://www.ticketmaster.com/the-pink-floyd-laser-spectacular-dallas-texas-02-19-2027/event/0C00649794EBBD1C",
       "score": 0.0,
-      "neighborhood": "downtown-dallas"
+      "neighborhood": "deep-ellum"
     },
     {
       "id": "pk-51539",
@@ -4922,7 +4894,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/51539-foy-vance-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     },
     {
       "id": "pk-37872",
@@ -4943,7 +4915,7 @@
       "price": "",
       "ticketUrl": "https://www.prekindle.com/event/37872-foy-vance-dallas",
       "score": 0.0,
-      "neighborhood": "upper-greenville"
+      "neighborhood": "lower-greenville"
     }
   ]
 }

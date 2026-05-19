@@ -20,5 +20,5 @@
 	"images": {
 		"binding": "IMAGES"
 	},
-	"routes": ["dallas-music-scene.com"]
+	"routes": ["dallas-music-scene.com/*"]
 }

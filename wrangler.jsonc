@@ -19,5 +19,12 @@
 	},
 	"images": {
 		"binding": "IMAGES"
-	}
+	},
+	"routes": [
+		{
+			"pattern": "dallas-music-scene.com",
+			"zone_name": "dallas-music-scene.com",
+			"strategy": "complex"
+		}
+	]
 }

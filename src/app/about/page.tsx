@@ -59,7 +59,7 @@ export default function AboutPage() {
       </p>
       <p>
         Part of the{" "}
-        <a href="https://dallas-music-scene.com" target="_blank" rel="noopener">
+        <a href="https://dailydallasnews.com" target="_blank" rel="noopener">
           Daily Dallas News
         </a>{" "}
         network.

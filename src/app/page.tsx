@@ -140,12 +140,23 @@ export default function HomePage() {
         style={{
           fontSize: "1.1rem",
           color: "#888",
-          maxWidth: "520px",
-          lineHeight: 1.6,
+          maxWidth: "540px",
+          lineHeight: 1.7,
         }}
       >
-        The bands you haven&apos;t heard yet, playing at bars you already love.
-        No arena. No ticket fees. Just live music, steps from your door.
+        Tired of hitting every site in town just to find out where the bands are?
+        This site is for you. We got tired of searching too — so we pulled this together.
+        Feel free to leave us suggestions and sites we should add.
+      </p>
+
+      <p
+        style={{
+          fontSize: "0.9rem",
+          color: "#666",
+          fontStyle: "italic",
+        }}
+      >
+        — the guys in the backyard
       </p>
 
       {/* CTA */}

@@ -39,13 +39,3 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-
-      - name: Debug domain routing
-        if: always()
-        run: |
-          echo "Worker URL: https://dallas-music-scene.philipbernard.workers.dev"
-          echo "Testing custom domain..."
-          HTTP_CODE=$(curl -sI https://dallas-music-scene.com/ | grep "^HTTP" | tail -1)
-          echo "Custom domain HTTP code: $HTTP_CODE"
-          echo "DNS A records:"
-          dig +short dallas-music-scene.com A

@@ -7,11 +7,11 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "DFW Music Venues — Dallas Fort Worth Bars, Clubs & Concert Halls With Live Music",
   description:
-    "Browse every DFW venue hosting live music — Deep Ellum dive bars, Lower Greenville clubs, Oak Cliff intimate rooms, Fort Worth honky-tonks. Find where local bands play.",
+    "Browse every DFW music venue with live shows — Deep Ellum punk rooms, Lower Greenville clubs, Oak Cliff intimate stages, Fort Worth honky-tonks. Local bands, no arena fees.",
   alternates: {
     canonical: "https://livemusic.dailydallasnews.com/venues",
   },
-  keywords: "DFW music venues, Dallas bars live music, Fort Worth honky tonk, Deep Ellum clubs, live music venues Dallas",
+  keywords: "DFW music venues, Dallas bars live music, Fort Worth honky tonk, Deep Ellum clubs, live music venues Dallas, Granada Theater, Longhorn Ballroom, House of Blues DFW",
 };
 
 const venuesListSchema = {

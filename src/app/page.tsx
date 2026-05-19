@@ -50,6 +50,7 @@ export const metadata: Metadata = {
   title: "DFW Live Music Calendar — Dallas & Fort Worth Concerts | LiveMusic DFW",
   description:
     "Discover live music at neighborhood bars and venues across Dallas-Fort Worth. Free shows, local bands, no arena fees. Find live music in Deep Ellum, Lower Greenville, Oak Cliff, Fort Worth, and more.",
+  alternates: { canonical: "https://livemusic.dailydallasnews.com" },
   openGraph: {
     title: "LiveMusic DFW — DFW Live Music Calendar",
     description:

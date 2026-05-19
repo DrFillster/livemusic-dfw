@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://livemusic.dailydallasnews.com/sitemap.xml
+Sitemap: https://dallas-music-scene.com/sitemap.xml
